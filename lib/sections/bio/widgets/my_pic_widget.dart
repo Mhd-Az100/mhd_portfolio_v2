@@ -14,18 +14,17 @@ class MyPictureWidget extends StatelessWidget {
           width: 680.w,
           height: 370.w,
           child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: Image.asset(
-                "assets/imgs/intro.png",
-                fit: BoxFit.cover,
-              )
-              // .animate(delay: 1000.ms).blurXY(
-              //     begin: 1,
-              //     end: 4.5,
-              //     duration: 1200.ms,
-              //     delay: 500.ms,
-              //     curve: Curves.easeInOutCubic),
-              ),
+            borderRadius: BorderRadius.circular(20.r),
+            child: Image.asset(
+              "assets/imgs/intro.png",
+              fit: BoxFit.cover,
+            ).animate(delay: 1000.ms).blurXY(
+                begin: 1,
+                end: 4.5,
+                duration: 1200.ms,
+                delay: 500.ms,
+                curve: Curves.easeInOutCubic),
+          ),
         ),
         Positioned(
           bottom: 0,

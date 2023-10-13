@@ -9,7 +9,7 @@ class ContentText {
       """I'm a skilled Flutter developer with a passion for creating innovative mobile apps.
 My expertise lies in designing user-friendly interfaces and writing efficient code.
 I stay updated on industry trends and excel at problem-solving, ensuring top-notch applications that impress users.
-Currently at the helm of the mobile developer team at “WarshaTec Company”,
+With my strong leadership skills, I have the ability to lead the mobile team effectively and drive innovation in mobile app development projects,
 I'm dedicated to sculpting innovative, user-centric solutions that breathe life into every pixel.""";
   static const personality = "“Personality”";
   static const aboutPersonality =

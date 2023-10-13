@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/sections/bio/widgets/glass_card_info_widget.dart';
 import 'package:mhd_portfolio_v2/sections/bio/widgets/my_pic_widget.dart';
@@ -20,36 +21,37 @@ class _BioWebState extends State<BioWeb> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Positioned(right: 40.w, child: const MyPictureWidget()
-              // .animate()
-              // .slideX(
-              //   begin: 4,
-              //   curve: Curves.fastLinearToSlowEaseIn,
-              //   duration: 1.2.seconds,
-              // )
-              // .fade(
-              //   duration: 1.5.seconds,
-              //   curve: Curves.fastLinearToSlowEaseIn,
-              // ),
-              ),
-          // Positioned(
-          //   bottom: 130,
-          //   left: -100,
-          //   child: const FloatingImages().animate().fade(
-          //         duration: 1.5.seconds,
-          //         curve: Curves.easeInExpo,
-          //       ),
-          // ),
           Positioned(
-              left: MediaQuery.of(context).size.width * 0.05.w,
-              top: -75.w,
-              child: const InfoCard()
-              // .animate().slideX(
-              //       begin: -4,
-              //       curve: Curves.fastLinearToSlowEaseIn,
-              //       duration: 1.2.seconds,
-              //     ),
-              ),
+            top: -200.w,
+            left: -120.w,
+            child: Image.asset(
+              "assets/imgs/rock1.png",
+              width: 300.w,
+            ),
+          ),
+          Positioned(
+            right: 40.w,
+            child: const MyPictureWidget()
+                .animate()
+                .slideX(
+                  begin: 4,
+                  curve: Curves.fastLinearToSlowEaseIn,
+                  duration: 1.2.seconds,
+                )
+                .fade(
+                  duration: 1.5.seconds,
+                  curve: Curves.fastLinearToSlowEaseIn,
+                ),
+          ),
+          Positioned(
+            left: MediaQuery.of(context).size.width * 0.05.w,
+            top: -75.w,
+            child: const InfoCard().animate().slideX(
+                  begin: -4,
+                  curve: Curves.fastLinearToSlowEaseIn,
+                  duration: 1.2.seconds,
+                ),
+          ),
         ],
       ),
     );

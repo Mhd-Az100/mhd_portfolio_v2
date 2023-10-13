@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
@@ -30,7 +32,9 @@ class AboutWeb extends StatelessWidget {
                   color: whiteLight),
             ),
             SizedBox(height: 20.w),
-            Text(
+            GlowText(
+              glowColor: Colors.white,
+              blurRadius: 15,
               ContentText.personality,
               style: GoogleFonts.nunito(
                   fontWeight: FontWeight.bold,
@@ -46,9 +50,12 @@ class AboutWeb extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                   fontSize: 20.sp,
                   color: whiteLight),
-            ),
+            )
           ],
-        ).paddingSymmetric(h: 130.w),
+        )
+            .paddingSymmetric(h: 130.w)
+            .animate()
+            .fadeIn(duration: 500.ms, curve: Curves.easeIn),
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
@@ -41,7 +42,9 @@ class TitleOfSection extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12.r)),
                 height: 5.w)),
         Center(
-          child: Text(
+          child: GlowText(
+            glowColor: blueColor.withOpacity(0.5),
+            blurRadius: 15,
             "“$text”",
             style: GoogleFonts.nunito(
                 fontWeight: FontWeight.bold,

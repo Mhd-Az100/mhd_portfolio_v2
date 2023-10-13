@@ -5,7 +5,8 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/resources/content_texts.dart';
-import 'package:mhd_portfolio_v2/sections/bio/widgets/glowing_buttons_widget.dart';
+import 'package:mhd_portfolio_v2/sections/bio/widgets/contacts_buttons_widget.dart';
+import 'package:seo/seo.dart';
 
 class InfoCard extends StatelessWidget {
   const InfoCard({
@@ -64,11 +65,15 @@ class InfoCard extends StatelessWidget {
             children: [
               Padding(
                   padding: EdgeInsets.only(left: 20.w, bottom: 5.w),
-                  child: Text(ContentText.name,
-                      style: GoogleFonts.nunito(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 45.sp,
-                          color: whiteLight))
+                  child: Seo.text(
+                    text: ContentText.name,
+                    style: TextTagStyle.h2,
+                    child: Text(ContentText.name,
+                        style: GoogleFonts.nunito(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 45.sp,
+                            color: whiteLight)),
+                  )
                   //     .animate()
                   //     .shimmer(colors: [
                   //   textLight,
@@ -78,11 +83,15 @@ class InfoCard extends StatelessWidget {
                   ),
               Padding(
                   padding: EdgeInsets.only(left: 20.w, bottom: 20.w),
-                  child: Text(ContentText.jobTitle,
-                      style: GoogleFonts.nunito(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 22.sp,
-                          color: whiteLight))
+                  child: Seo.text(
+                    text: ContentText.jobTitle,
+                    style: TextTagStyle.h5,
+                    child: Text(ContentText.jobTitle,
+                        style: GoogleFonts.nunito(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 22.sp,
+                            color: whiteLight)),
+                  )
                   //     .animate()
                   //     .shimmer(colors: [
                   //   blueColor,
@@ -96,11 +105,15 @@ class InfoCard extends StatelessWidget {
             width: 500.w,
             child: Padding(
               padding: EdgeInsets.only(left: 20.w),
-              child: Text(
-                textAlign: TextAlign.start,
-                ContentText.bio,
-                style:
-                    GoogleFonts.nunito(fontSize: 18.spMin, color: whiteLight),
+              child: Seo.text(
+                text: ContentText.bio,
+                style: TextTagStyle.h4,
+                child: Text(
+                  textAlign: TextAlign.start,
+                  ContentText.bio,
+                  style:
+                      GoogleFonts.nunito(fontSize: 18.spMin, color: whiteLight),
+                ),
               ),
             ),
           ),
