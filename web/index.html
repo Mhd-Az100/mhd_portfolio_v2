@@ -49,7 +49,7 @@
       .then((botd) => botd.detect())
       .then(function (result) {
         if (result.bot) {
-          window.flutterWebRenderer = "html";
+          window.flutterWebRenderer = "canvaskit";
         }
       });
   </script>
@@ -61,6 +61,7 @@
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function (engineInitializer) {
+          renderer: "canvaskit"
           engineInitializer.initializeEngine().then(function (appRunner) {
             appRunner.runApp();
           });

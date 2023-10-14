@@ -1,7 +1,7 @@
-import 'dart:developer';
-
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +13,7 @@ import 'package:mhd_portfolio_v2/sections/about/view/about_web.dart';
 import 'package:mhd_portfolio_v2/sections/bio/views/bio_web.dart';
 import 'package:mhd_portfolio_v2/sections/my_projects/view/my_porjects_web.dart';
 import 'package:mhd_portfolio_v2/sections/my_services/view/my_services_web.dart';
+import 'package:mhd_portfolio_v2/widgets/random_move_widget.dart';
 import 'package:mhd_portfolio_v2/widgets/tabbar_widget.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -40,7 +41,6 @@ class RootScreen extends StatelessWidget {
             children: [
               BlocBuilder<MainCubit, MainState>(
                 builder: (context, state) {
-                  log(state.scrollDown.toString());
                   return AnimatedSwitcher(
                     // opacity: state.scrollDown ? 0.0 : 1.0,
 
@@ -75,18 +75,33 @@ class RootScreen extends StatelessWidget {
                         child: Stack(
                           clipBehavior: Clip.none,
                           children: [
+                            RandomWidgetMove(
+                              top: 100.w,
+                              left: 10.w,
+                              child: Image.asset("assets/imgs/rock2.png",
+                                      width: 150.w)
+                                  .animate()
+                                  .blur(
+                                      duration: 400.ms,
+                                      end: const Offset(9, 9)),
+                            ),
                             Positioned(
-                                top: 100.w,
-                                right: -80.w,
-                                child: Image.asset(
-                                  "assets/imgs/rock2.png",
-                                  width: 350.w,
-                                )),
-                            Positioned(
-                                bottom: 100.w,
-                                left: -80.w,
-                                child: Image.asset("assets/imgs/cube.png",
-                                    width: 400.w)),
+                                    bottom: 200.w,
+                                    right: -80.w,
+                                    child: Image.asset(
+                                      "assets/imgs/cube.png",
+                                      width: 400.w,
+                                    ))
+                                .animate(
+                                  onPlay: (controller) =>
+                                      controller.repeat(reverse: true),
+                                )
+                                .move(
+                                  begin: Offset(0.w, 100.w),
+                                  end: Offset(0.w, 50.w),
+                                  curve: Curves.easeInOutSine,
+                                  duration: 10.seconds,
+                                ),
                             const AboutWeb().paddingSymmetric(h: 50.w),
                           ],
                         ),
@@ -102,24 +117,57 @@ class RootScreen extends StatelessWidget {
                           clipBehavior: Clip.none,
                           children: [
                             Positioned(
-                                bottom: 100.w,
-                                right: -20.w,
-                                child: Image.asset("assets/imgs/rock2.png",
-                                    width: 400.w)),
+                                    top: 100.w,
+                                    right: -100.w,
+                                    child: Image.asset("assets/imgs/rock2.png",
+                                        width: 400.w))
+                                .animate(
+                                  onPlay: (controller) =>
+                                      controller.repeat(reverse: true),
+                                )
+                                .move(
+                                  begin: Offset(0.w, 100.w),
+                                  end: Offset(0.w, 50.w),
+                                  curve: Curves.easeInOutSine,
+                                  duration: 10.seconds,
+                                ),
+                            RandomWidgetMove(
+                              top: 200.w,
+                              left: 600.w,
+                              child: Image.asset("assets/imgs/circle.png",
+                                      width: 150.w)
+                                  .animate()
+                                  .blur(
+                                      duration: 400.ms,
+                                      end: const Offset(9, 9)),
+                            ),
+                            RandomWidgetMove(
+                              bottom: 200.w,
+                              right: 500.w,
+                              child: Image.asset("assets/imgs/circle.png",
+                                      width: 150.w)
+                                  .animate()
+                                  .blur(
+                                      duration: 400.ms,
+                                      end: const Offset(9, 9)),
+                            ),
                             Positioned(
-                                top: 50.w,
-                                left: 600.w,
-                                child: Image.asset(
-                                  "assets/imgs/circle.png",
-                                  width: 170.w,
-                                )),
-                            Positioned(
-                                bottom: 300.w,
-                                left: -50.w,
-                                child: Image.asset(
-                                  "assets/imgs/cube.png",
-                                  width: 250.w,
-                                )),
+                                    top: 300.w,
+                                    left: -50.w,
+                                    child: Image.asset(
+                                      "assets/imgs/cube.png",
+                                      width: 250.w,
+                                    ))
+                                .animate(
+                                  onPlay: (controller) =>
+                                      controller.repeat(reverse: true),
+                                )
+                                .move(
+                                  begin: Offset(0.w, 100.w),
+                                  end: Offset(0.w, 50.w),
+                                  curve: Curves.easeInOutSine,
+                                  duration: 10.seconds,
+                                ),
                             const MyServicesWeb().paddingSymmetric(h: 50.w),
                           ],
                         ),

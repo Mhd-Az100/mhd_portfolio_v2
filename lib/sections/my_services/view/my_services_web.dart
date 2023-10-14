@@ -43,7 +43,7 @@ class MyServicesWeb extends StatelessWidget {
             ServiceCard(
               service: MyServicesList.myServicesList[2],
             )
-                .animate(delay: 100.ms)
+                .animate(delay: 200.ms)
                 .fadeIn(begin: 0, duration: 900.ms, curve: Curves.easeIn)
                 .slideX(
                     begin: -2, end: 0, duration: 700.ms, curve: Curves.easeIn),
@@ -51,7 +51,7 @@ class MyServicesWeb extends StatelessWidget {
             ServiceCard(
               service: MyServicesList.myServicesList[3],
             )
-                .animate(delay: 100.ms)
+                .animate(delay: 200.ms)
                 .fadeIn(begin: 0, duration: 900.ms, curve: Curves.easeIn)
                 .slideX(
                     begin: 2, end: 0, duration: 700.ms, curve: Curves.easeIn),

@@ -5,15 +5,15 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class GlowingButton extends StatefulWidget {
+class ContactButton extends StatefulWidget {
   final String? svgPath;
   final String? url;
-  const GlowingButton({super.key, required this.svgPath, required this.url});
+  const ContactButton({super.key, required this.svgPath, required this.url});
   @override
-  _GlowingButtonState createState() => _GlowingButtonState();
+  _ContactButtonState createState() => _ContactButtonState();
 }
 
-class _GlowingButtonState extends State<GlowingButton> {
+class _ContactButtonState extends State<ContactButton> {
   bool _isHovered = false;
 
   @override

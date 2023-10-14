@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,30 +18,32 @@ class TitleOfSection extends StatelessWidget {
       children: [
         Expanded(
             child: Container(
-                decoration: BoxDecoration(
-                    color: blueColor,
-                    boxShadow: [
-                      BoxShadow(
-                          blurRadius: 70.r,
-                          color: purpleColor.withOpacity(0.5),
-                          spreadRadius: 5.w),
-                      BoxShadow(
-                          blurRadius: 20,
-                          color: blueColor.withOpacity(0.5),
-                          spreadRadius: 2),
-                      BoxShadow(
-                          blurRadius: 100.r,
-                          offset: Offset(120.w, 0),
-                          color: blueColor.withOpacity(0.4),
-                          spreadRadius: 3),
-                      BoxShadow(
-                          blurRadius: 100.r,
-                          offset: Offset(-20.w, 0),
-                          color: blueColor.withOpacity(0.4),
-                          spreadRadius: 3.w),
-                    ],
-                    borderRadius: BorderRadius.circular(12.r)),
-                height: 5.w)),
+                    decoration: BoxDecoration(
+                        color: blueColor,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 70.r,
+                              color: purpleColor.withOpacity(0.5),
+                              spreadRadius: 5.w),
+                          BoxShadow(
+                              blurRadius: 20,
+                              color: blueColor.withOpacity(0.5),
+                              spreadRadius: 2),
+                          BoxShadow(
+                              blurRadius: 100.r,
+                              offset: Offset(120.w, 0),
+                              color: blueColor.withOpacity(0.4),
+                              spreadRadius: 3),
+                          BoxShadow(
+                              blurRadius: 100.r,
+                              offset: Offset(-20.w, 0),
+                              color: blueColor.withOpacity(0.4),
+                              spreadRadius: 3.w),
+                        ],
+                        borderRadius: BorderRadius.circular(12.r)),
+                    height: 5.w)
+                .animate()
+                .fadeIn(duration: 1000.ms, curve: Curves.easeInQuad)),
         Center(
           child: GlowText(
             glowColor: blueColor.withOpacity(0.5),
@@ -54,30 +57,32 @@ class TitleOfSection extends StatelessWidget {
         ).paddingSymmetric(h: 30.w),
         Expanded(
             child: Container(
-                decoration: BoxDecoration(
-                    color: blueColor,
-                    boxShadow: [
-                      BoxShadow(
-                          blurRadius: 70.r,
-                          color: purpleColor.withOpacity(0.5),
-                          spreadRadius: 5.w),
-                      BoxShadow(
-                          blurRadius: 20,
-                          color: blueColor.withOpacity(0.5),
-                          spreadRadius: 2),
-                      BoxShadow(
-                          blurRadius: 100.r,
-                          offset: Offset(20.w, 0),
-                          color: blueColor.withOpacity(0.4),
-                          spreadRadius: 3),
-                      BoxShadow(
-                          blurRadius: 100.r,
-                          offset: Offset(-120.w, 0),
-                          color: blueColor.withOpacity(0.4),
-                          spreadRadius: 3.w),
-                    ],
-                    borderRadius: BorderRadius.circular(12.r)),
-                height: 5.w)),
+                    decoration: BoxDecoration(
+                        color: blueColor,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 70.r,
+                              color: purpleColor.withOpacity(0.5),
+                              spreadRadius: 5.w),
+                          BoxShadow(
+                              blurRadius: 20,
+                              color: blueColor.withOpacity(0.5),
+                              spreadRadius: 2),
+                          BoxShadow(
+                              blurRadius: 100.r,
+                              offset: Offset(20.w, 0),
+                              color: blueColor.withOpacity(0.4),
+                              spreadRadius: 3),
+                          BoxShadow(
+                              blurRadius: 100.r,
+                              offset: Offset(-120.w, 0),
+                              color: blueColor.withOpacity(0.4),
+                              spreadRadius: 3.w),
+                        ],
+                        borderRadius: BorderRadius.circular(12.r)),
+                    height: 5.w)
+                .animate()
+                .fadeIn(duration: 1000.ms, curve: Curves.easeInQuad)),
       ],
     ).paddingSymmetric(h: 110.w);
   }

@@ -22,13 +22,22 @@ class _BioWebState extends State<BioWeb> {
         clipBehavior: Clip.none,
         children: [
           Positioned(
-            top: -200.w,
-            left: -120.w,
+            top: 0.w,
+            left: 0.w,
             child: Image.asset(
               "assets/imgs/rock1.png",
               width: 300.w,
             ),
-          ),
+          )
+              .animate(
+                onPlay: (controller) => controller.repeat(reverse: true),
+              )
+              .move(
+                end: Offset(-140.w, -200.w),
+                begin: Offset(-140.w, -150.w),
+                curve: Curves.easeInOutSine,
+                duration: 10.seconds,
+              ),
           Positioned(
             right: 40.w,
             child: const MyPictureWidget()

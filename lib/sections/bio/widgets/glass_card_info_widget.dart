@@ -44,26 +44,28 @@ class InfoCard extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(35.w),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(
-            ContentText.welcome,
-            style: GoogleFonts.nunito(
-                fontWeight: FontWeight.w400,
-                fontSize: 25.sp,
-                color: whiteLight),
-          )
-              .animate(
-            onPlay: (controller) => controller.repeat(reverse: true),
-          )
-              .shimmer(colors: [
-            whiteLight,
-            primaryColor.withOpacity(0.3),
-            whiteLight,
-          ], duration: 8.seconds, curve: Curves.easeInOut),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              ContentText.welcome,
+              style: GoogleFonts.nunito(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 25.sp,
+                  color: whiteLight),
+            )
+                .animate(
+              onPlay: (controller) => controller.repeat(reverse: true),
+            )
+                .shimmer(colors: [
+              whiteLight,
+              primaryColor.withOpacity(0.3),
+              whiteLight,
+            ], duration: 8.seconds, curve: Curves.easeInOut),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
                   padding: EdgeInsets.only(left: 20.w, bottom: 5.w),
                   child: Seo.text(
                     text: ContentText.name,
@@ -73,15 +75,13 @@ class InfoCard extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             fontSize: 45.sp,
                             color: whiteLight)),
-                  )
-                  //     .animate()
-                  //     .shimmer(colors: [
-                  //   textLight,
-                  //   primaryColor,
-                  //   blueColor,
-                  // ], duration: 2.7.seconds, curve: Curves.easeInOut),
-                  ),
-              Padding(
+                  ).animate().shimmer(colors: [
+                    whiteLight,
+                    primaryColor,
+                    blueColor,
+                  ], duration: 2.7.seconds, curve: Curves.easeInOut),
+                ),
+                Padding(
                   padding: EdgeInsets.only(left: 20.w, bottom: 20.w),
                   child: Seo.text(
                     text: ContentText.jobTitle,
@@ -91,58 +91,55 @@ class InfoCard extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             fontSize: 22.sp,
                             color: whiteLight)),
-                  )
-                  //     .animate()
-                  //     .shimmer(colors: [
-                  //   blueColor,
-                  //   primaryColor,
-                  //   textLight,
-                  // ], duration: 2.7.seconds, curve: Curves.easeInOut),
+                  ).animate().shimmer(colors: [
+                    blueColor,
+                    primaryColor,
+                    whiteLight,
+                  ], duration: 2.7.seconds, curve: Curves.easeInOut),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 500.w,
+              child: Padding(
+                padding: EdgeInsets.only(left: 20.w),
+                child: Seo.text(
+                  text: ContentText.bio,
+                  style: TextTagStyle.h4,
+                  child: Text(
+                    textAlign: TextAlign.start,
+                    ContentText.bio,
+                    style: GoogleFonts.nunito(
+                        fontSize: 18.spMin, color: whiteLight),
                   ),
-            ],
-          ),
-          SizedBox(
-            width: 500.w,
-            child: Padding(
-              padding: EdgeInsets.only(left: 20.w),
-              child: Seo.text(
-                text: ContentText.bio,
-                style: TextTagStyle.h4,
-                child: Text(
-                  textAlign: TextAlign.start,
-                  ContentText.bio,
-                  style:
-                      GoogleFonts.nunito(fontSize: 18.spMin, color: whiteLight),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 20.w),
-          const Row(
-            children: [
-              GlowingButton(
-                  svgPath: "assets/svg/gmail.svg",
-                  url: "mailto:mohamadalazmeh4@gmail.com"),
-              GlowingButton(
-                  svgPath: "assets/svg/github.svg",
-                  url: "https://github.com/Mhd-Az100"),
-              GlowingButton(
-                  svgPath: "assets/svg/linkedIn.svg",
-                  url:
-                      "https://www.linkedin.com/in/mohammad-al-azmeh-026498217/"),
-              GlowingButton(
-                  svgPath: "assets/svg/telegram.svg",
-                  url: "https://t.me/MHD_Al_Azmeh"),
-              GlowingButton(
-                  svgPath: "assets/svg/whatsapp.svg",
-                  url:
-                      "https://api.whatsapp.com/send/?phone=%2B963931480357&text&type=phone_number&app_absent=0")
-            ],
-          )
-        ]
-            // .animate(interval: 300.ms).slideX(
-            //     begin: -10, curve: Curves.easeInOutCubic, duration: 700.ms),
-            ),
+            SizedBox(height: 20.w),
+            const Row(
+              children: [
+                ContactButton(
+                    svgPath: "assets/svg/gmail.svg",
+                    url: "mailto:mohamadalazmeh4@gmail.com"),
+                ContactButton(
+                    svgPath: "assets/svg/github.svg",
+                    url: "https://github.com/Mhd-Az100"),
+                ContactButton(
+                    svgPath: "assets/svg/linkedIn.svg",
+                    url:
+                        "https://www.linkedin.com/in/mohammad-al-azmeh-026498217/"),
+                ContactButton(
+                    svgPath: "assets/svg/telegram.svg",
+                    url: "https://t.me/MHD_Al_Azmeh"),
+                ContactButton(
+                    svgPath: "assets/svg/whatsapp.svg",
+                    url:
+                        "https://api.whatsapp.com/send/?phone=%2B963931480357&text&type=phone_number&app_absent=0")
+              ],
+            )
+          ].animate(interval: 300.ms).slideX(
+              begin: -10, curve: Curves.easeInOutCubic, duration: 700.ms),
+        ),
       ),
     );
   }
