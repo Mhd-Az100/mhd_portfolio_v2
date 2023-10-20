@@ -169,7 +169,9 @@ class _ServiceCardState extends State<ServiceCard>
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
+                    blueColor.withOpacity(0.1),
                     blueColor.withOpacity(0.2),
+                    blueColor.withOpacity(0.3),
                     purpleColor,
                   ],
                 ),
