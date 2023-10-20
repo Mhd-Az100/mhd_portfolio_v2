@@ -6,7 +6,7 @@ class MyProjectsModel {
   String? workingType;
   String? workingPlace;
   String? desciption;
-  String? image;
+  String? imagePath;
   bool? private;
   String? googlplayLink;
   String? appStoreLink;
@@ -16,7 +16,7 @@ class MyProjectsModel {
     this.title,
     this.desciption,
     this.workingType,
-    this.image,
+    this.imagePath,
     this.workingPlace,
     this.private,
     this.googlplayLink,

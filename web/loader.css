@@ -24,6 +24,24 @@ body {
     background-color: rgb(32, 32, 32);
 }
 
+/* Add neon title */
+#loader-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    /* Adjust the font size as needed */
+    color: rgba(128, 64, 255, .66);
+    /* Initial neon green color */
+    text-shadow: colorChange 5s infinite;
+    /* Neon text shadow effect */
+    animation: colorChange 5s infinite;
+    /* Color change animation */
+}
+
 #eclipse:before,
 #eclipse:after {
     content: "";
@@ -57,23 +75,6 @@ body {
     animation-duration: 5s;
 }
 
-/* Add neon title */
-#loader-title {
-    position: absolute;
-    top: 70%;
-    /* Adjust the position to add space between title and loader */
-    left: 50.5%;
-    transform: translateX(-50%);
-    font-size: 30px;
-    font-family: 'Nunito', sans-serif;
-    /* Adjust the font size as needed */
-    color: rgba(128, 64, 255, .66);
-    /* Initial neon green color */
-    text-shadow: colorChange 5s infinite;
-    /* Neon text shadow effect */
-    animation: colorChange 5s infinite;
-    /* Color change animation */
-}
 
 @keyframes violetHalo {
     from {

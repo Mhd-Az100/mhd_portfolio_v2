@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   # animated_text_kit: ^4.2.2
+  asset_cache: ^2.0.0
   equatable: ^2.0.5
   flip_card: ^0.7.0
   flutter:
@@ -35,3 +36,4 @@ flutter:
   assets:
     - assets/svg/.
     - assets/imgs/.
+    - assets/projects/.

@@ -4,14 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/sections/bio/widgets/glass_card_info_widget.dart';
 import 'package:mhd_portfolio_v2/sections/bio/widgets/my_pic_widget.dart';
 
-class BioWeb extends StatefulWidget {
+class BioWeb extends StatelessWidget {
   const BioWeb({Key? key}) : super(key: key);
 
-  @override
-  State<BioWeb> createState() => _BioWebState();
-}
-
-class _BioWebState extends State<BioWeb> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +19,7 @@ class _BioWebState extends State<BioWeb> {
           Positioned(
             top: 0.w,
             left: 0.w,
-            child: Image.asset(
+            child: Image.network(
               "assets/imgs/rock1.png",
               width: 300.w,
             ),

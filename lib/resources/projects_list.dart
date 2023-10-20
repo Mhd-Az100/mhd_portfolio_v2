@@ -7,7 +7,7 @@ class MyProjectsList {
       workingPlace: "Syria",
       title: "Number One",
       workingType: "Build the project with the team",
-      image: "assets/imgs/numberone.png",
+      imagePath: "assets/projects/numberone.png",
       technology: [
         "Flutter",
         "GetX",
@@ -29,7 +29,7 @@ class MyProjectsList {
       workingPlace: "The United Arab Emirates",
       workingType: "Building the project from scratch to finish",
       desciption: Discreptions.tasliha,
-      image: "assets/imgs/tasliha.png",
+      imagePath: "assets/projects/tasliha.png",
       technology: [
         "Flutter",
         "BloC",
@@ -47,7 +47,7 @@ class MyProjectsList {
       title: "HCFB",
       workingType: "Build the project with the team",
       desciption: Discreptions.hcfp,
-      image: "assets/imgs/hcfp.png",
+      imagePath: "assets/projects/hcfp.png",
       technology: [
         "Flutter",
         "GetX",
@@ -64,7 +64,7 @@ class MyProjectsList {
       workingPlace: "Iraq",
       workingType: "Building the project from scratch to finish",
       desciption: Discreptions.hamushi,
-      image: "assets/imgs/hamushi.png",
+      imagePath: "assets/projects/hamushi.png",
       technology: [
         "Flutter",
         "BloC",
@@ -82,7 +82,7 @@ class MyProjectsList {
       title: "Old City",
       workingType: "Build the project with the team",
       desciption: Discreptions.aleppo,
-      image: "assets/imgs/aleppo.png",
+      imagePath: "assets/projects/aleppo.png",
       technology: [
         "Flutter",
         "GetX",
@@ -99,7 +99,7 @@ class MyProjectsList {
       workingType: "Building the project from scratch to finish",
       private: true,
       desciption: Discreptions.cancer,
-      image: "assets/imgs/cancer.png",
+      imagePath: "assets/projects/cancer.png",
       technology: [
         "Flutter",
         "GetX",
@@ -114,7 +114,7 @@ class MyProjectsList {
       title: "B-Way",
       workingType: "Build the project with the team",
       desciption: Discreptions.bway,
-      image: "assets/imgs/bway.png",
+      imagePath: "assets/projects/bway.png",
       technology: [
         "Flutter",
         "BloC",
@@ -129,7 +129,7 @@ class MyProjectsList {
       title: "Alsamah",
       workingType: "Build the project with the team",
       desciption: Discreptions.alsamah,
-      image: "assets/imgs/alsamah.png",
+      imagePath: "assets/projects/alsamah.png",
       technology: [
         "Flutter",
         "GetX",

@@ -40,7 +40,7 @@ class FloatingImages extends StatelessWidget {
                   ),
                   width: 70.w,
                   height: 70.w,
-                  child: Image.asset(
+                  child: Image.network(
                     "assets/imgs/float1.png",
                     fit: BoxFit.contain,
                   ))),
@@ -62,7 +62,7 @@ class FloatingImages extends StatelessWidget {
                 ),
                 width: 70.w,
                 height: 70.w,
-                child: Image.asset(
+                child: Image.network(
                   "assets/imgs/float2.png",
                   fit: BoxFit.contain,
                 ),
@@ -85,7 +85,7 @@ class FloatingImages extends StatelessWidget {
                 ),
                 width: 70.w,
                 height: 70.w,
-                child: Image.asset(
+                child: Image.network(
                   "assets/imgs/float4.png",
                   fit: BoxFit.contain,
                 ),
@@ -108,7 +108,7 @@ class FloatingImages extends StatelessWidget {
                 ),
                 width: 70.w,
                 height: 70.w,
-                child: Image.asset(
+                child: Image.network(
                   "assets/imgs/float5.png",
                   fit: BoxFit.contain,
                 ),
@@ -131,7 +131,7 @@ class FloatingImages extends StatelessWidget {
                 ),
                 width: 70.w,
                 height: 70.w,
-                child: Image.asset(
+                child: Image.network(
                   "assets/imgs/float6.png",
                   fit: BoxFit.contain,
                 ),
@@ -154,7 +154,7 @@ class FloatingImages extends StatelessWidget {
                 ),
                 width: 70.w,
                 height: 70.w,
-                child: Image.asset(
+                child: Image.network(
                   "assets/imgs/float3.png",
                   fit: BoxFit.contain,
                 ),

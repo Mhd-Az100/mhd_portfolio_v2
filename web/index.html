@@ -44,11 +44,12 @@
 </head>
 
 <body>
-  <div id="cloud"></div>
-  <div id="eclipse"></div>
-  <div id="loader-title">Just a moment...</div>
-  <script src="main.dart.js" type="application/javascript"
-    onendload="document.getElementById('loader').remove();"></script>
+  <div id="loader">
+    <div id="cloud"></div>
+    <div id="eclipse"></div>
+  </div>
+  <!-- <div id="loader-title">Loading</div> -->
+
   <script>
     import("./scripts/botd-1.1.0.js")
       .then((botd) => botd.load())
@@ -67,14 +68,16 @@
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function (engineInitializer) {
-          renderer: "canvaskit"
           engineInitializer.initializeEngine().then(function (appRunner) {
             appRunner.runApp();
+            document.getElementById('loader').remove();
           });
         }
       });
     });
   </script>
+
+
 </body>
 
 </html>

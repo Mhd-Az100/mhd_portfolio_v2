@@ -59,4 +59,8 @@ class MainCubit extends Cubit<MainState> {
       scrollToIndex(state.currentIndexProject);
     }
   }
+
+ Future featchAssets()async{
+  
+ }
 }
