@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_glow/flutter_glow.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
@@ -13,6 +11,7 @@ import 'package:mhd_portfolio_v2/sections/about/view/about_web.dart';
 import 'package:mhd_portfolio_v2/sections/bio/views/bio_web.dart';
 import 'package:mhd_portfolio_v2/sections/my_projects/view/my_porjects_web.dart';
 import 'package:mhd_portfolio_v2/sections/my_services/view/my_services_web.dart';
+import 'package:mhd_portfolio_v2/widgets/footer_widget.dart';
 import 'package:mhd_portfolio_v2/widgets/random_move_widget.dart';
 import 'package:mhd_portfolio_v2/widgets/tabbar_widget.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -49,7 +48,7 @@ class RootScreen extends StatelessWidget {
                         ? const SizedBox.shrink()
                         : TabBarWidget(
                             controller: scrollTag,
-                          ).paddingSymmetric(h: 50.w, v: 20.w),
+                          ).paddingSymmetric(h: 50.w, v: 5.w),
                   );
                 },
               ),
@@ -83,6 +82,7 @@ class RootScreen extends StatelessWidget {
                                   .animate()
                                   .blur(
                                       duration: 400.ms,
+                                      curve: Curves.easeIn,
                                       end: const Offset(9, 9)),
                             ),
                             Positioned(
@@ -100,7 +100,7 @@ class RootScreen extends StatelessWidget {
                                   begin: Offset(0.w, 100.w),
                                   end: Offset(0.w, 50.w),
                                   curve: Curves.easeInOutSine,
-                                  duration: 10.seconds,
+                                  duration: 8.seconds,
                                 ),
                             const AboutWeb().paddingSymmetric(h: 50.w),
                           ],
@@ -129,7 +129,7 @@ class RootScreen extends StatelessWidget {
                                   begin: Offset(0.w, 100.w),
                                   end: Offset(0.w, 50.w),
                                   curve: Curves.easeInOutSine,
-                                  duration: 10.seconds,
+                                  duration: 8.seconds,
                                 ),
                             RandomWidgetMove(
                               top: 200.w,
@@ -139,6 +139,7 @@ class RootScreen extends StatelessWidget {
                                   .animate()
                                   .blur(
                                       duration: 400.ms,
+                                      curve: Curves.easeIn,
                                       end: const Offset(9, 9)),
                             ),
                             RandomWidgetMove(
@@ -149,6 +150,7 @@ class RootScreen extends StatelessWidget {
                                   .animate()
                                   .blur(
                                       duration: 400.ms,
+                                      curve: Curves.easeIn,
                                       end: const Offset(9, 9)),
                             ),
                             Positioned(
@@ -166,7 +168,7 @@ class RootScreen extends StatelessWidget {
                                   begin: Offset(0.w, 100.w),
                                   end: Offset(0.w, 50.w),
                                   curve: Curves.easeInOutSine,
-                                  duration: 10.seconds,
+                                  duration: 8.seconds,
                                 ),
                             const MyServicesWeb().paddingSymmetric(h: 50.w),
                           ],
@@ -187,26 +189,7 @@ class RootScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Designed And Developed By",
-                          style: GoogleFonts.nunito(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w400,
-                              color: whiteLight),
-                        ),
-                        SizedBox(width: 5.w),
-                        GlowText(
-                          "Mohammad Al Azmeh",
-                          style: GoogleFonts.nunito(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w600,
-                              color: blueColor),
-                        )
-                      ],
-                    ).paddingSymmetric(v: 20.w)
+                    const FooterWidget().paddingSymmetric(v: 20.w)
                   ],
                 ),
               ),

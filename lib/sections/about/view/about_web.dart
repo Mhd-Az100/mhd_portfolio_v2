@@ -17,6 +17,7 @@ class AboutWeb extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 30.w),
         const TitleOfSection(text: "About Me"),
         SizedBox(height: 70.w),
         Column(

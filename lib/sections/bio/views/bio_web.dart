@@ -36,7 +36,7 @@ class _BioWebState extends State<BioWeb> {
                 end: Offset(-140.w, -200.w),
                 begin: Offset(-140.w, -150.w),
                 curve: Curves.easeInOutSine,
-                duration: 10.seconds,
+                duration: 8.seconds,
               ),
           Positioned(
             right: 40.w,

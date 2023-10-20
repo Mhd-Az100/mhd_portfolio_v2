@@ -43,16 +43,23 @@ class ProjectDetailsWidget extends StatelessWidget {
               Text(
                 "#${MyProjectsList.myProjects[index].workingType}",
                 style: GoogleFonts.nunito(
-                    fontSize: 12.sp,
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w400,
-                    color: whiteLight),
+                    color: whiteLight.withOpacity(0.7)),
               ),
-              Text(
-                "#Where the project operates: ${MyProjectsList.myProjects[index].workingPlace}",
-                style: GoogleFonts.nunito(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
-                    color: whiteLight),
+              Row(
+                children: [
+                  Icon(Icons.place,
+                      size: 12.w, color: whiteLight.withOpacity(0.7)),
+                  SizedBox(width: 2.w),
+                  Text(
+                    "${MyProjectsList.myProjects[index].workingPlace}",
+                    style: GoogleFonts.nunito(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w400,
+                        color: whiteLight.withOpacity(0.7)),
+                  ),
+                ],
               ),
               SizedBox(height: 10.w),
               Wrap(

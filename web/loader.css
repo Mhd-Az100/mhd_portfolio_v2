@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(32, 32, 32);
+}
+
+#cloud {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+}
+
+#eclipse {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    border-radius: 50%;
+    background-color: rgb(32, 32, 32);
+}
+
+#eclipse:before,
+#eclipse:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    display: block;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 100px 100px;
+}
+
+#eclipse:before {
+    top: 0;
+    left: 0;
+    background: rgba(128, 64, 255, .33);
+    box-shadow: 0 0 200px rgba(128, 64, 255, .66);
+    animation-name: violetHalo;
+    animation-duration: 4s;
+}
+
+#eclipse:after {
+    top: 0;
+    left: 0;
+    background: rgb(24, 178, 255);
+    box-shadow: 0 0 200px rgba(146, 233, 255, 1);
+    animation-name: greenHalo;
+    animation-duration: 5s;
+}
+
+/* Add neon title */
+#loader-title {
+    position: absolute;
+    top: 70%;
+    /* Adjust the position to add space between title and loader */
+    left: 50.5%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-family: 'Nunito', sans-serif;
+    /* Adjust the font size as needed */
+    color: rgba(128, 64, 255, .66);
+    /* Initial neon green color */
+    text-shadow: colorChange 5s infinite;
+    /* Neon text shadow effect */
+    animation: colorChange 5s infinite;
+    /* Color change animation */
+}
+
+@keyframes violetHalo {
+    from {
+        transform: rotateZ(0deg);
+        opacity: .2
+    }
+
+    to {
+        transform: rotateZ(360deg);
+        opacity: 1
+    }
+}
+
+@keyframes greenHalo {
+    from {
+        transform: rotateZ(0deg);
+        opacity: 1
+    }
+
+    to {
+        transform: rotateZ(360deg);
+        opacity: .2
+    }
+}
+
+@keyframes colorChange {
+
+
+    50% {
+        color: rgb(24, 178, 255);
+        /* Neon blue */
+    }
+
+    75% {
+        color: rgb(152, 145, 255);
+        /* Neon orange */
+    }
+
+    100% {
+        color: rgba(128, 64, 255, .66);
+        /* Neon green */
+    }
+}

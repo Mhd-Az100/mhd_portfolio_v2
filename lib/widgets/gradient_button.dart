@@ -29,15 +29,9 @@ class _GradientButtonState extends State<GradientButton> {
           _isHovered = isHovered;
         });
       },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.easeIn,
-        padding: EdgeInsets.symmetric(vertical: 5.w, horizontal: 20.w),
+      child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.r),
-          border: Border.all(
-              width: 1.5.w,
-              color: _isHovered ? Colors.transparent : whiteLight),
           boxShadow: _isHovered
               ? [
                   BoxShadow(
@@ -61,24 +55,37 @@ class _GradientButtonState extends State<GradientButton> {
                     spreadRadius: 2.0,
                   ),
                 ],
-          gradient: LinearGradient(
-            colors: _isHovered
-                ? [
-                    blueColor,
-                    purpleColor,
-                  ]
-                : [
-                    Colors.transparent,
-                    Colors.transparent,
-                  ], // Adjust the button colors
-            begin: _isHovered ? Alignment.centerRight : Alignment.topLeft,
-            end: _isHovered ? Alignment.centerLeft : Alignment.bottomRight,
-          ),
         ),
-        child: Text(
-          widget.text,
-          style: GoogleFonts.nunito(
-              fontSize: 16.sp, fontWeight: FontWeight.w600, color: whiteLight),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.ease,
+          padding: EdgeInsets.symmetric(vertical: 5.w, horizontal: 20.w),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(6.r),
+            border: Border.all(
+                width: 1.5.w,
+                color: _isHovered ? Colors.transparent : whiteLight),
+            gradient: LinearGradient(
+              colors: _isHovered
+                  ? const [
+                      blueColor,
+                      purpleColor,
+                    ]
+                  : [
+                      Colors.transparent,
+                      Colors.transparent,
+                    ], // Adjust the button colors
+              begin: _isHovered ? Alignment.centerRight : Alignment.topLeft,
+              end: _isHovered ? Alignment.centerLeft : Alignment.bottomRight,
+            ),
+          ),
+          child: Text(
+            widget.text,
+            style: GoogleFonts.nunito(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                color: whiteLight),
+          ),
         ),
       ),
     );

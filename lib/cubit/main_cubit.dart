@@ -33,6 +33,10 @@ class MainCubit extends Cubit<MainState> {
     emit(state.copyWith(hoverResume: isHover));
   }
 
+  hoverService(bool isHover) {
+    emit(state.copyWith(hoverService: isHover));
+  }
+
   isScrollingForward(bool isScrollDown) {
     emit(state.copyWith(scrolldown: isScrollDown));
   }

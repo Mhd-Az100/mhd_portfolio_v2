@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
 class MyProjectsModel {
   String? title;
   String? workingType;
@@ -8,6 +10,7 @@ class MyProjectsModel {
   bool? private;
   String? googlplayLink;
   String? appStoreLink;
+  Widget? features;
   List<String>? technology;
   MyProjectsModel({
     this.title,
@@ -17,6 +20,7 @@ class MyProjectsModel {
     this.workingPlace,
     this.private,
     this.googlplayLink,
+    this.features,
     this.appStoreLink,
     this.technology,
   });

@@ -8,12 +8,14 @@ class MainState extends Equatable {
     required this.scrollDown,
     required this.hoverResume,
     required this.hoverContact,
+    required this.hoverService,
     required this.currentIndexProject,
     required this.hoverTabs,
     required this.currentIndexTab,
   });
   final bool scrollDown;
   final bool hoverResume;
+  final bool hoverService;
   final ContactEnum hoverContact;
   final int currentIndexProject;
   final int currentIndexTab;
@@ -23,6 +25,7 @@ class MainState extends Equatable {
     return const MainState(
       scrollDown: false,
       hoverResume: false,
+      hoverService: false,
       hoverContact: ContactEnum.none,
       hoverTabs: TabsEnum.none,
       currentIndexProject: 0,
@@ -35,6 +38,7 @@ class MainState extends Equatable {
         scrollDown,
         hoverResume,
         hoverContact,
+        hoverService,
         currentIndexTab,
         currentIndexProject,
         hoverTabs,
@@ -42,6 +46,7 @@ class MainState extends Equatable {
 
   MainState copyWith({
     bool? scrolldown,
+    bool? hoverService,
     bool? hoverResume,
     ContactEnum? hoverContact,
     TabsEnum? hoverTabs,
@@ -51,6 +56,7 @@ class MainState extends Equatable {
     return MainState(
       scrollDown: scrolldown ?? scrollDown,
       hoverTabs: hoverTabs ?? this.hoverTabs,
+      hoverService: hoverService ?? this.hoverService,
       hoverResume: hoverResume ?? this.hoverResume,
       hoverContact: hoverContact ?? this.hoverContact,
       currentIndexProject: currentIndexProject ?? this.currentIndexProject,

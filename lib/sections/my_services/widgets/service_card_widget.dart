@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,12 +16,26 @@ class ServiceCard extends StatelessWidget {
     required this.service,
   }) : super(key: key);
   final ServiceModel service;
+  bool isHovering = false;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         cardKey.currentState?.toggleCard();
+      },
+      onHover: (v) {
+        if (v) {
+          isHovering = true;
+
+          Timer(const Duration(milliseconds: 500), () {
+            if (isHovering) {
+              cardKey.currentState?.toggleCard();
+            }
+          });
+        } else {
+          isHovering = false;
+        }
       },
       child: FlipCard(
         key: cardKey,

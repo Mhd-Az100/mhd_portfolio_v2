@@ -16,6 +16,7 @@ class MyProjectsWeb extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        SizedBox(height: 30.w),
         const TitleOfSection(text: "My Projects"),
         SizedBox(height: 50.w),
         BlocBuilder<MainCubit, MainState>(
