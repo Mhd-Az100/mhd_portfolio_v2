@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "my-portfolio-d4117"
-  }
+    "default": "my-portfolio-d4117",
+    "mhd.portfolio": "mhd-portfolio-v2"
+  },
+  "targets": {},
+  "etags": {}
 }

@@ -1,0 +1,39 @@
+{
+  "name": "mohammad_alazmeh.portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio website showcasing my Flutter web development projects and skills",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "flutter build web --web-renderer auto --release"
+  },
+  "keywords": [
+    "Flutter",
+    "Flutter Development",
+    "Flutter Web",
+    "Mobile Development",
+    "Web Development",
+    "Portfolio",
+    "Personal Website",
+    "Projects",
+    "Skills",
+    "Mobile Developer",
+    "Front-End",
+    "UI/UX",
+    "Responsive Design"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mhd-Az100/mhd_portfolio_v2.git"
+  },
+  "author": "Mohammad Al Azmeh <mohamadalazmeh4@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mhd-Az100/mhd_portfolio_v2/issues"
+  },
+  "homepage": "https://github.com/Mhd-Az100/mhd_portfolio_v2#readme"
+}
