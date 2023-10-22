@@ -15,7 +15,7 @@ class MyPictureWidget extends StatelessWidget {
           height: 370.w,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.r),
-            child: Image.network(
+            child: Image.asset(
               "assets/imgs/intro.png",
               fit: BoxFit.cover,
             ).animate(delay: 1000.ms).blurXY(
@@ -34,7 +34,7 @@ class MyPictureWidget extends StatelessWidget {
           child: SizedBox(
             width: 340.w,
             height: 390.w,
-            child: Image.network(
+            child: Image.asset(
               "assets/imgs/personal.png",
               scale: 0.5.w,
             )

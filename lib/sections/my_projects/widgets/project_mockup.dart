@@ -22,7 +22,7 @@ class ProjectMockupWidget extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.network(
+          Image.asset(
             "assets/imgs/background.png",
             width: 600.w,
           ),
@@ -31,7 +31,7 @@ class ProjectMockupWidget extends StatelessWidget {
             bottom: 50.w,
             left: 20.w,
             right: 20.w,
-            child: Image.network(
+            child: Image.asset(
               MyProjectsList.myProjects[index].imagePath ?? '',
             ),
           )

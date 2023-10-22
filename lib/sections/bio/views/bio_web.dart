@@ -19,7 +19,7 @@ class BioWeb extends StatelessWidget {
           Positioned(
             top: 0.w,
             left: 0.w,
-            child: Image.network(
+            child: Image.asset(
               "assets/imgs/rock1.png",
               width: 300.w,
             ),

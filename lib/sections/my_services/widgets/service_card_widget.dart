@@ -71,7 +71,7 @@ class _ServiceCardState extends State<ServiceCard>
               if (v) {
                 isHovering = true;
                 startAnimation();
-                hoverTimer = Timer(const Duration(milliseconds: 1000), () {
+                hoverTimer = Timer(const Duration(milliseconds: 750), () {
                   if (isHovering && cardKey.currentState!.isFront) {
                     cardKey.currentState?.toggleCard();
                   }
@@ -120,7 +120,7 @@ class _ServiceCardState extends State<ServiceCard>
                   children: [
                     Align(
                       alignment: Alignment.topLeft,
-                      child: Image.network(
+                      child: Image.asset(
                         widget.service.imgPath ?? "",
                         height: 140.w,
                       ),

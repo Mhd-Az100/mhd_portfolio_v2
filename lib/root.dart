@@ -77,7 +77,7 @@ class RootScreen extends StatelessWidget {
                             RandomWidgetMove(
                               top: 100.w,
                               left: 10.w,
-                              child: Image.network("assets/imgs/rock2.png",
+                              child: Image.asset("assets/imgs/rock2.png",
                                       width: 150.w)
                                   .animate()
                                   .blur(
@@ -88,7 +88,7 @@ class RootScreen extends StatelessWidget {
                             Positioned(
                                     bottom: 200.w,
                                     right: -80.w,
-                                    child: Image.network(
+                                    child: Image.asset(
                                       "assets/imgs/cube.png",
                                       width: 400.w,
                                     ))
@@ -119,8 +119,7 @@ class RootScreen extends StatelessWidget {
                             Positioned(
                                     top: 100.w,
                                     right: -100.w,
-                                    child: Image.network(
-                                        "assets/imgs/rock2.png",
+                                    child: Image.asset("assets/imgs/rock2.png",
                                         width: 400.w))
                                 .animate(
                                   onPlay: (controller) =>
@@ -135,7 +134,7 @@ class RootScreen extends StatelessWidget {
                             RandomWidgetMove(
                               top: 200.w,
                               left: 600.w,
-                              child: Image.network("assets/imgs/circle.png",
+                              child: Image.asset("assets/imgs/circle.png",
                                       width: 150.w)
                                   .animate()
                                   .blur(
@@ -146,7 +145,7 @@ class RootScreen extends StatelessWidget {
                             RandomWidgetMove(
                               bottom: 200.w,
                               right: 500.w,
-                              child: Image.network("assets/imgs/circle.png",
+                              child: Image.asset("assets/imgs/circle.png",
                                       width: 150.w)
                                   .animate()
                                   .blur(
@@ -157,7 +156,7 @@ class RootScreen extends StatelessWidget {
                             Positioned(
                                     top: 300.w,
                                     left: -50.w,
-                                    child: Image.network(
+                                    child: Image.asset(
                                       "assets/imgs/cube.png",
                                       width: 250.w,
                                     ))
