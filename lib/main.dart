@@ -29,8 +29,8 @@ class MainApp extends StatelessWidget {
           builder: (_, child) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: 'Mohammad Al Azmeh',
-
+              title: 'Mohammad Al Azmeh | Flutter Developer',
+             
               // You can use the library anywhere in the app even in theme
               theme: ThemeData(
                 primarySwatch: Colors.blue,
