@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,7 +71,7 @@ class _ServiceCardState extends State<ServiceCard>
               if (v) {
                 isHovering = true;
                 startAnimation();
-                hoverTimer = Timer(const Duration(milliseconds: 750), () {
+                hoverTimer = Timer(const Duration(milliseconds: 500), () {
                   if (isHovering && cardKey.currentState!.isFront) {
                     cardKey.currentState?.toggleCard();
                   }
@@ -117,19 +118,19 @@ class _ServiceCardState extends State<ServiceCard>
                 ),
                 child: Stack(
                   children: [
-                    // Align(
-                    //   alignment: Alignment.topLeft,
-                    //   child: Image.asset(
-                    //     widget.service.imgPath ?? "",
-                    //     height: 140.w,
-                    //   ),
-                    // )
-                    //     .animate(
-                    //       target: isHovering ? 1 : 0,
-                    //     )
-                    //     .shimmer(duration: 1.seconds) // shimmer +
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Image.asset(
+                        widget.service.imgPath ?? "",
+                        height: 140.w,
+                      ),
+                    )
+                        .animate(
+                          target: isHovering ? 1 : 0,
+                        )
+                        .shimmer(duration: 1.seconds) // shimmer +
 
-                    // ,
+                    ,
                     SizedBox(height: 10.w),
                     Align(
                       alignment: Alignment.bottomRight,
