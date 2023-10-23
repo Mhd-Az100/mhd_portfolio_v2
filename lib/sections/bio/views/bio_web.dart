@@ -21,7 +21,7 @@ class BioWeb extends StatelessWidget {
             left: 0.w,
             child: Image.asset(
               "assets/imgs/rock1.png",
-              width: 300.w,
+              scale: 0.7,
             ),
           )
               .animate(
