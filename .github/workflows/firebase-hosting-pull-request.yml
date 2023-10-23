@@ -16,7 +16,7 @@ jobs:
       - name: 'Run flutter pub get'
         run: flutter pub get
       - name: 'Build Web App'
-        run: flutter build web
+        run: flutter build web --web-renderer auto --release 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
