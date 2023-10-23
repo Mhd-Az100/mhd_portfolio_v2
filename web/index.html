@@ -37,10 +37,10 @@
   <meta name="og:card" content="summary_large_image">
 
 
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="">
-<meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="summary_large_image">
 
   <meta name="description"
     content="Experienced Flutter developer specializing in cross-platform mobile app development. Explore my portfolio and projects.">
@@ -85,7 +85,29 @@
     <div id="eclipse"></div>
   </div>
   <!-- <div id="loader-title">Loading</div> -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD7isu_qiQ5Avsi8o7cgCAUpWjojNpUy_w",
+      authDomain: "mohammad-portfolio.firebaseapp.com",
+      projectId: "mohammad-portfolio",
+      storageBucket: "mohammad-portfolio.appspot.com",
+      messagingSenderId: "322799061675",
+      appId: "1:322799061675:web:acbaf378aeb214e40845ee",
+      measurementId: "G-2S2DCFMCY8"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <script>
     import("./scripts/botd-1.1.0.js")
       .then((botd) => botd.load())

@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "mhd-portfolio-v2",
-    "mhd.portfolio": "mhd-portfolio-v2"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "mohammad-portfolio"
+  }
 }
