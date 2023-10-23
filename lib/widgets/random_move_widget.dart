@@ -68,7 +68,7 @@ class _RandomWidgetMoveState extends State<RandomWidgetMove> {
   @override
   Widget build(BuildContext context) {
     return AnimatedPositioned(
-      duration: const Duration(seconds: 14),
+      duration: const Duration(seconds: 7),
       curve: Curves.easeInOutSine,
       top: widget.top,
       left: widget.left,
