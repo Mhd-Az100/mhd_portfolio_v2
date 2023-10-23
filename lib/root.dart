@@ -78,7 +78,7 @@ class RootScreen extends StatelessWidget {
                               top: 100.w,
                               left: 10.w,
                               child: Image.asset("assets/imgs/rock2.png",
-                                      scale: 0.8)
+                                      scale: 0.8.w)
                                   .animate()
                                   .blur(
                                       duration: 400.ms,
@@ -90,7 +90,7 @@ class RootScreen extends StatelessWidget {
                                     right: -80.w,
                                     child: Image.asset(
                                       "assets/imgs/cube.png",
-                                      scale: 0.5,
+                                      scale: 0.5.w,
                                     ))
                                 .animate(
                                   onPlay: (controller) =>
@@ -121,7 +121,7 @@ class RootScreen extends StatelessWidget {
                                     right: -100.w,
                                     child: Image.asset(
                                       "assets/imgs/rock2.png",
-                                      scale: 0.5,
+                                      scale: 0.5.w,
                                     ))
                                 .animate(
                                   onPlay: (controller) =>
@@ -160,7 +160,7 @@ class RootScreen extends StatelessWidget {
                                     left: -50.w,
                                     child: Image.asset(
                                       "assets/imgs/cube.png",
-                                      scale: 0.7,
+                                      scale: 0.7.w,
                                     ))
                                 .animate(
                                   onPlay: (controller) =>

@@ -24,7 +24,7 @@ class ProjectMockupWidget extends StatelessWidget {
         children: [
           Image.asset(
             "assets/imgs/background.png",
-            scale: 0.05,
+            scale: 0.05.w,
           ),
           Positioned(
             top: 0.w,
