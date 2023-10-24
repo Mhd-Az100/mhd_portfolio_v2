@@ -48,7 +48,7 @@ class RootScreen extends StatelessWidget {
                         ? const SizedBox.shrink()
                         : TabBarWidget(
                             controller: scrollTag,
-                          ).paddingSymmetric(h: 50.w, v: 5.w),
+                          ).paddingSymmetric(h: 50.w, v: 10.w),
                   );
                 },
               ),
@@ -77,20 +77,26 @@ class RootScreen extends StatelessWidget {
                             RandomWidgetMove(
                               top: 100.w,
                               left: 10.w,
-                              child: Image.asset("assets/imgs/rock2.png",
-                                      scale: 0.8.w)
-                                  .animate()
-                                  .blur(
-                                      duration: 400.ms,
-                                      curve: Curves.easeIn,
-                                      end: const Offset(9, 9)),
+                              child: SizedBox(
+                                width: 150.w,
+                                child: Image.asset(
+                                  fit: BoxFit.cover,
+                                  "assets/imgs/rock2.png",
+                                ).animate().blur(
+                                    duration: 400.ms,
+                                    curve: Curves.easeIn,
+                                    end: const Offset(9, 9)),
+                              ),
                             ),
                             Positioned(
                                     bottom: 200.w,
                                     right: -80.w,
-                                    child: Image.asset(
-                                      "assets/imgs/cube.png",
-                                      scale: 0.5.w,
+                                    child: SizedBox(
+                                      width: 400.w,
+                                      child: Image.asset(
+                                        "assets/imgs/cube.png",
+                                        fit: BoxFit.cover,
+                                      ),
                                     ))
                                 .animate(
                                   onPlay: (controller) =>
@@ -119,9 +125,12 @@ class RootScreen extends StatelessWidget {
                             Positioned(
                                     top: 100.w,
                                     right: -100.w,
-                                    child: Image.asset(
-                                      "assets/imgs/rock2.png",
-                                      scale: 0.5.w,
+                                    child: SizedBox(
+                                      width: 350.w,
+                                      child: Image.asset(
+                                        fit: BoxFit.cover,
+                                        "assets/imgs/rock2.png",
+                                      ),
                                     ))
                                 .animate(
                                   onPlay: (controller) =>
@@ -158,9 +167,12 @@ class RootScreen extends StatelessWidget {
                             Positioned(
                                     top: 300.w,
                                     left: -50.w,
-                                    child: Image.asset(
-                                      "assets/imgs/cube.png",
-                                      scale: 0.7.w,
+                                    child: SizedBox(
+                                      width: 300.w,
+                                      child: Image.asset(
+                                        fit: BoxFit.cover,
+                                        "assets/imgs/cube.png",
+                                      ),
                                     ))
                                 .animate(
                                   onPlay: (controller) =>

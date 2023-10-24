@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 
-class RainbowButton extends StatefulWidget {
-  const RainbowButton({super.key});
+class AnimatedButton extends StatefulWidget {
+  const AnimatedButton({super.key});
 
   @override
-  RainbowButtonState createState() => RainbowButtonState();
+  AnimatedButtonState createState() => AnimatedButtonState();
 }
 
-class RainbowButtonState extends State<RainbowButton>
+class AnimatedButtonState extends State<AnimatedButton>
     with TickerProviderStateMixin {
   //
   AnimationController? _controller;
   //
   ScrollController s = ScrollController();
   //
-  List<Color> rainbowColor = [purpleColor, blueColor];
+  List<Color> rainbowColor = [
+    purpleColor,
+    purpleColor,
+    blueColor.withOpacity(0.3),
+    blueColor.withOpacity(0.3),
+    blueColor.withOpacity(0.3),
+    blueColor.withOpacity(0.3),
+  ];
   //
   @override
   void initState() {
@@ -42,8 +50,8 @@ class RainbowButtonState extends State<RainbowButton>
       alignment: Alignment.center,
       children: [
         SizedBox(
-          width: 120,
-          height: 50,
+          width: 120.w,
+          height: 42.w,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: ListView(
@@ -59,11 +67,7 @@ class RainbowButtonState extends State<RainbowButton>
                     gradient: LinearGradient(
                       tileMode: TileMode.repeated,
                       transform: const GradientRotation(0.8),
-                      colors: [
-                        ...rainbowColor,
-                        ...rainbowColor,
-                        ...rainbowColor,
-                      ],
+                      colors: rainbowColor,
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -87,15 +91,15 @@ class RainbowButtonState extends State<RainbowButton>
               color: Colors.black,
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
-            width: 100,
-            height: 40,
+            width: 118.w,
+            height: 40.w,
             child: Center(
               child: Text(
-                "Obada Alhalabi",
-                style: GoogleFonts.kalam(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Colors.white,
+                "Resume",
+                style: GoogleFonts.nunito(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  color: whiteLight,
                 ),
               ),
             ),

@@ -36,7 +36,6 @@ class MyPictureWidget extends StatelessWidget {
             height: 390.w,
             child: Image.asset(
               "assets/imgs/personal.png",
-              scale: 0.5.w,
             )
                 .animate(delay: 1000.ms)
                 .fade(

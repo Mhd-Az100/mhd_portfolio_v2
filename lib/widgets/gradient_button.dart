@@ -61,23 +61,10 @@ class _GradientButtonState extends State<GradientButton> {
           curve: Curves.ease,
           padding: EdgeInsets.symmetric(vertical: 5.w, horizontal: 20.w),
           decoration: BoxDecoration(
+            color: primaryColor,
             borderRadius: BorderRadius.circular(6.r),
             border: Border.all(
-                width: 1.5.w,
-                color: _isHovered ? Colors.transparent : whiteLight),
-            gradient: LinearGradient(
-              colors: _isHovered
-                  ? const [
-                      blueColor,
-                      purpleColor,
-                    ]
-                  : [
-                      Colors.transparent,
-                      Colors.transparent,
-                    ], // Adjust the button colors
-              begin: _isHovered ? Alignment.centerRight : Alignment.topLeft,
-              end: _isHovered ? Alignment.centerLeft : Alignment.bottomRight,
-            ),
+                width: 1.w, color: _isHovered ? blueColor : whiteLight),
           ),
           child: Text(
             widget.text,

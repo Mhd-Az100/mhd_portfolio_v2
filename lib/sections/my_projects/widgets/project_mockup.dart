@@ -22,9 +22,9 @@ class ProjectMockupWidget extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.asset(
-            "assets/imgs/background.png",
-            scale: 0.05.w,
+          SizedBox(
+            width: 550.w,
+            child: Image.asset("assets/imgs/background.png", fit: BoxFit.cover),
           ),
           Positioned(
             top: 0.w,
