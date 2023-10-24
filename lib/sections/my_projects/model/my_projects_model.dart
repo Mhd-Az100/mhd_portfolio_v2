@@ -10,6 +10,7 @@ class MyProjectsModel {
   bool? private;
   String? googlplayLink;
   String? appStoreLink;
+  String? driveLink;
   Widget? features;
   List<String>? technology;
   MyProjectsModel({
@@ -20,6 +21,7 @@ class MyProjectsModel {
     this.workingPlace,
     this.private,
     this.googlplayLink,
+    this.driveLink,
     this.features,
     this.appStoreLink,
     this.technology,

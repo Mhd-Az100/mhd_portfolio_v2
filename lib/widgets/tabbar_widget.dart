@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
-import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
 import 'package:mhd_portfolio_v2/resources/enums.dart';
 import 'package:mhd_portfolio_v2/widgets/gradient_button.dart';
 import 'package:mhd_portfolio_v2/widgets/tabs_button.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TabBarWidget extends StatelessWidget {
   const TabBarWidget({super.key, required this.controller});
@@ -60,8 +59,9 @@ class TabBarWidget extends StatelessWidget {
           }),
       SizedBox(width: 50.w),
       GradientButton(
-        onPressed: () {
-          context.read<MainCubit>().hoverTabs(TabsEnum.resume);
+        onPressed: () async {
+          await launchUrl(Uri.parse(
+              "https://drive.google.com/file/d/1MRSqc6-4Fn-ag46vFVcW4q-2Fsz9XsDO/view?usp=drive_link"));
         },
         text: "Resume",
       ),

@@ -39,8 +39,8 @@ class MyProjectsList {
         "Firebase Auth",
         "WebView",
       ],
-      googlplayLink: "",
-      appStoreLink: "",
+      driveLink:
+          "https://drive.google.com/drive/folders/1AP8LDOk-1fEis3MU4feiqIpqJTDi3llI?usp=drive_link",
     ),
     MyProjectsModel(
       workingPlace: "Armenia",
@@ -57,7 +57,6 @@ class MyProjectsList {
       ],
       googlplayLink:
           "https://play.google.com/store/apps/details?id=com.warchatec.hcfp",
-      appStoreLink: "",
     ),
     MyProjectsModel(
       title: "Hamoushi",
@@ -74,8 +73,8 @@ class MyProjectsList {
         "Firebase Auth",
         "Real Time Socket (Pusher)",
       ],
-      googlplayLink: "",
-      appStoreLink: "",
+      driveLink:
+          "https://drive.google.com/file/d/1FAoU2ikLLz3hkNgwQ-Gu9GKOpn0YxBTG/view?usp=drive_link",
     ),
     MyProjectsModel(
       workingPlace: "Syria",
@@ -106,24 +105,21 @@ class MyProjectsList {
         "MVC",
         "SqfLite",
       ],
-      googlplayLink: "",
-      appStoreLink: "",
     ),
     MyProjectsModel(
-      workingPlace: "Syria",
-      title: "B-Way",
-      workingType: "Build the project with the team",
-      desciption: Discreptions.bway,
-      imagePath: "assets/projects/bway.png",
-      technology: [
-        "Flutter",
-        "BloC",
-        "Clean Architecture",
-        "Firebase Messaging",
-      ],
-      googlplayLink: "",
-      appStoreLink: "",
-    ),
+        workingPlace: "Syria",
+        title: "B-Way",
+        workingType: "Build the project with the team",
+        desciption: Discreptions.bway,
+        imagePath: "assets/projects/bway.png",
+        technology: [
+          "Flutter",
+          "BloC",
+          "Clean Architecture",
+          "Firebase Messaging",
+        ],
+        driveLink:
+            "https://drive.google.com/file/d/1KQHOvVvyp35YjBiwqWZvUnfqeP-J7-_d/view?usp=drive_link"),
     MyProjectsModel(
       workingPlace: "Syria",
       title: "Alsamah",
@@ -139,7 +135,6 @@ class MyProjectsList {
       ],
       googlplayLink:
           "https://play.google.com/store/apps/details?id=com.ertiqasoft.alsamah",
-      appStoreLink: "",
     ),
 //
 
@@ -168,8 +163,8 @@ class MyProjectsList {
 //         "MVVM",
 //         "Firebase Messaging",
 //       ],
-//       googlplayLink: "",
-//       appStoreLink: "",
+//
+//
 //     ),
   ];
 }

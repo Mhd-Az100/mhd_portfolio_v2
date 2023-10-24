@@ -85,8 +85,22 @@ class ProjectDetailsWidget extends StatelessWidget {
         Visibility(
           visible: (MyProjectsList.myProjects[index].googlplayLink?.isEmpty ??
                   true) &&
-              (MyProjectsList.myProjects[index].appStoreLink?.isEmpty ?? true),
+              (MyProjectsList.myProjects[index].appStoreLink?.isEmpty ??
+                  true) &&
+              (MyProjectsList.myProjects[index].driveLink?.isEmpty ?? true),
           child: InProgressCard(index: index),
+        ),
+        Visibility(
+          visible:
+              (MyProjectsList.myProjects[index].driveLink?.isNotEmpty ?? false),
+          child: StoreButton(
+            icon: "assets/svg/drive.svg",
+            txt: "Drive Link",
+            onTap: () async {
+              await launchUrl(
+                  Uri.parse(MyProjectsList.myProjects[index].driveLink ?? ''));
+            },
+          ),
         ),
         Row(
           children: [
