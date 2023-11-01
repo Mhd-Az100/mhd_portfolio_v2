@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
@@ -18,8 +19,7 @@ class TabBarWidget extends StatelessWidget {
           tabsEnum: TabsEnum.bio,
           text: "Bio",
           ontap: () {
-            controller.scrollToIndex(0,
-                preferPosition: AutoScrollPosition.begin);
+            controller.animateTo(0, curve: Curves.easeInOut, duration: 500.ms);
           }),
       Container(
         color: whiteLight,
@@ -30,8 +30,8 @@ class TabBarWidget extends StatelessWidget {
           tabsEnum: TabsEnum.about,
           text: "About Me",
           ontap: () {
-            controller.scrollToIndex(1,
-                preferPosition: AutoScrollPosition.begin);
+            controller.animateTo(900.w,
+                curve: Curves.easeInOut, duration: 500.ms);
           }),
       Container(
         color: whiteLight,
@@ -42,8 +42,8 @@ class TabBarWidget extends StatelessWidget {
           tabsEnum: TabsEnum.services,
           text: "My Services",
           ontap: () {
-            controller.scrollToIndex(2,
-                preferPosition: AutoScrollPosition.begin);
+            controller.animateTo(1800.w,
+                curve: Curves.easeInOut, duration: 500.ms);
           }),
       Container(
         color: whiteLight,
@@ -54,8 +54,8 @@ class TabBarWidget extends StatelessWidget {
           tabsEnum: TabsEnum.myprojects,
           text: "My Projects",
           ontap: () {
-            controller.scrollToIndex(3,
-                preferPosition: AutoScrollPosition.begin);
+            controller.animateTo(2700.w,
+                curve: Curves.easeInOut, duration: 500.ms);
           }),
       SizedBox(width: 50.w),
       GradientButton(

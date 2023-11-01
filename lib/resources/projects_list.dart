@@ -42,23 +42,7 @@ class MyProjectsList {
       driveLink:
           "https://drive.google.com/drive/folders/1AP8LDOk-1fEis3MU4feiqIpqJTDi3llI?usp=drive_link",
     ),
-    MyProjectsModel(
-      workingPlace: "Armenia",
-      title: "HCFB",
-      workingType: "Build the project with the team",
-      desciption: Discreptions.hcfp,
-      imagePath: "assets/projects/hcfp.png",
-      technology: [
-        "Flutter",
-        "GetX",
-        "MVC",
-        "Firebase Messaging",
-        "Firebase Auth",
-      ],
-      googlplayLink:
-          "https://play.google.com/store/apps/details?id=com.warchatec.hcfp",
-    ),
-    MyProjectsModel(
+     MyProjectsModel(
       title: "Hamoushi",
       workingPlace: "Iraq",
       workingType: "Building the project from scratch to finish",
@@ -76,6 +60,36 @@ class MyProjectsList {
       driveLink:
           "https://drive.google.com/file/d/1FAoU2ikLLz3hkNgwQ-Gu9GKOpn0YxBTG/view?usp=drive_link",
     ),
+    MyProjectsModel(
+      workingPlace: "Armenia",
+      title: "HCFB",
+      workingType: "Build the project with the team",
+      desciption: Discreptions.hcfp,
+      imagePath: "assets/projects/hcfp.png",
+      technology: [
+        "Flutter",
+        "GetX",
+        "MVC",
+        "Firebase Messaging",
+        "Firebase Auth",
+      ],
+      googlplayLink:
+          "https://play.google.com/store/apps/details?id=com.warchatec.hcfp",
+    ),
+     MyProjectsModel(
+        workingPlace: "Syria",
+        title: "B-Way",
+        workingType: "Build the project with the team",
+        desciption: Discreptions.bway,
+        imagePath: "assets/projects/bway.png",
+        technology: [
+          "Flutter",
+          "BloC",
+          "Clean Architecture",
+          "Firebase Messaging",
+        ],
+        driveLink:
+            "https://drive.google.com/file/d/1KQHOvVvyp35YjBiwqWZvUnfqeP-J7-_d/view?usp=drive_link"),
     MyProjectsModel(
       workingPlace: "Syria",
       title: "Old City",
@@ -106,20 +120,7 @@ class MyProjectsList {
         "SqfLite",
       ],
     ),
-    MyProjectsModel(
-        workingPlace: "Syria",
-        title: "B-Way",
-        workingType: "Build the project with the team",
-        desciption: Discreptions.bway,
-        imagePath: "assets/projects/bway.png",
-        technology: [
-          "Flutter",
-          "BloC",
-          "Clean Architecture",
-          "Firebase Messaging",
-        ],
-        driveLink:
-            "https://drive.google.com/file/d/1KQHOvVvyp35YjBiwqWZvUnfqeP-J7-_d/view?usp=drive_link"),
+  
     MyProjectsModel(
       workingPlace: "Syria",
       title: "Alsamah",

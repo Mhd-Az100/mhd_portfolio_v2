@@ -26,9 +26,9 @@ class ListIndexPojectWidget extends StatelessWidget {
           child: ScrollablePositionedList.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemScrollController:
-                  context.read<MainCubit>().itemScrollController,
+                  context.read<MainCubit>().projectIndexScrollController,
               itemPositionsListener:
-                  context.read<MainCubit>().itemPositionsListener,
+                  context.read<MainCubit>().projectIndexPositionsListener,
               shrinkWrap: true,
               itemCount: MyProjectsList.myProjects.length,
               itemBuilder: (context, index) => Column(

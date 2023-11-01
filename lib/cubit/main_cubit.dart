@@ -3,18 +3,21 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:mhd_portfolio_v2/resources/enums.dart';
 import 'package:mhd_portfolio_v2/resources/projects_list.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 part 'main_state.dart';
 
 class MainCubit extends Cubit<MainState> {
   MainCubit() : super(MainState.initState());
+  AutoScrollController rootScrollTag = AutoScrollController();
 
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener =
+  final ItemScrollController projectIndexScrollController =
+      ItemScrollController();
+  final ItemPositionsListener projectIndexPositionsListener =
       ItemPositionsListener.create();
   Future scrollToIndex(int index) async {
-    await itemScrollController.scrollTo(
+    await projectIndexScrollController.scrollTo(
         alignment: 0.4,
         curve: Curves.easeIn,
         index: index,
@@ -60,7 +63,5 @@ class MainCubit extends Cubit<MainState> {
     }
   }
 
- Future featchAssets()async{
-  
- }
+  Future featchAssets() async {}
 }

@@ -25,6 +25,7 @@ dependencies:
   scrollable_positioned_list: ^0.3.8
   seo: ^0.0.5
   url_launcher: ^6.1.14
+  web_smooth_scroll: ^1.1.0
 
 dev_dependencies:
   flutter_test:

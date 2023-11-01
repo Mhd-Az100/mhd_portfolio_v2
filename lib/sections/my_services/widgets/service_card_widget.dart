@@ -71,7 +71,7 @@ class _ServiceCardState extends State<ServiceCard>
               if (v) {
                 isHovering = true;
                 startAnimation();
-                hoverTimer = Timer(const Duration(milliseconds: 500), () {
+                hoverTimer = Timer(const Duration(milliseconds: 300), () {
                   if (isHovering && cardKey.currentState!.isFront) {
                     cardKey.currentState?.toggleCard();
                   }

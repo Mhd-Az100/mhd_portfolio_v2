@@ -55,7 +55,7 @@ class AboutWeb extends StatelessWidget {
           ],
         )
             .paddingSymmetric(h: 130.w)
-            .animate(delay: 300.ms)
+            .animate()
             .fadeIn(duration: 500.ms, curve: Curves.easeIn),
       ],
     );
