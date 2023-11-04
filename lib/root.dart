@@ -233,7 +233,7 @@ class _RootScreenState extends State<RootScreen> {
                           ),
                         ),
                       ),
-                      const FooterWidget().paddingSymmetric(v: 20.w)
+                      const FooterWidget().paddingOnly(bottom: 20.w)
                     ],
                   ),
                 ),
