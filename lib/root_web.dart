@@ -72,7 +72,9 @@ class _RootScreenWebState extends State<RootScreenWeb> {
               Expanded(
                 child: ListView(
                   controller: mainCubit.rootScrollTag,
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: Responsive.isTablet(context)
+                      ? null
+                      : const NeverScrollableScrollPhysics(),
                   children: [
                     AutoScrollTag(
                       key: const ValueKey(0),
