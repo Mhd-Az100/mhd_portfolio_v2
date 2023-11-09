@@ -102,6 +102,7 @@ class MyProjectsMobile extends StatelessWidget {
                   ],
                 ),
                 const ListIndexPojectWidgetMobile(),
+                const SizedBox(height: 15),
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 700),
                   switchInCurve: Curves.easeIn,

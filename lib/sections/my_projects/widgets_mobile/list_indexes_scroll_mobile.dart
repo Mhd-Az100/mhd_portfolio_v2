@@ -37,8 +37,9 @@ class _ListIndexPojectWidgetMobileState
   Widget build(BuildContext context) {
     return BlocBuilder<MainCubit, MainState>(
       builder: (context, state) {
-        return SizedBox(
-          height: 70.w,
+        return Container(
+          clipBehavior: Clip.none,
+          height: 70,
           width: double.infinity * 0.8,
           child: ScrollablePositionedList.builder(
             scrollDirection: Axis.horizontal,
@@ -49,82 +50,76 @@ class _ListIndexPojectWidgetMobileState
                 context.read<MainCubit>().projectIndexPositionsListener,
             shrinkWrap: true,
             itemCount: MyProjectsList.myProjects.length,
-            itemBuilder: (context, index) => Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    context.read<MainCubit>().selectProjectIndex(index);
-                  },
-                  child: SizedBox(
-                    width: 50.w,
-                    height: 50.w,
-                    child: Stack(
-                      children: [
-                        index == state.currentIndexProject
-                            ? Positioned(
-                                top: 10.w,
-                                bottom: 10.w,
-                                left: 0.w,
-                                right: 0.w,
-                                child: ImageFiltered(
-                                  imageFilter: ImageFilter.blur(
-                                      sigmaX: 12.w, sigmaY: 12.w),
-                                  child: Container(
-                                          height: 25.w,
-                                          width: 25.w,
-                                          decoration: BoxDecoration(
-                                              gradient:
-                                                  const LinearGradient(colors: [
-                                                purpleColor,
-                                                blueColor
-                                              ]),
-                                              shape: BoxShape.circle,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                    color: blueColor,
-                                                    offset: Offset(5.w, 3.w),
-                                                    blurRadius: 20),
-                                                BoxShadow(
-                                                    color: purpleColor,
-                                                    offset: Offset(-5.w, -3.w),
-                                                    blurRadius: 20.w)
-                                              ]))
-                                      .animate(
-                                          target:
-                                              index == state.currentIndexProject
-                                                  ? 1
-                                                  : 0)
-                                      .fadeIn(
-                                          duration: 500.ms,
-                                          curve: Curves.easeInCubic),
-                                ),
-                              )
-                            : const Positioned(
-                                top: 0,
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                child: SizedBox.shrink()),
-                        Positioned(
-                          top: 0,
-                          bottom: 0,
-                          left: 0,
-                          right: 0,
-                          child: Center(
-                            child: Text((index + 1).toString(),
-                                style: GoogleFonts.nunito(
-                                    fontSize: 12.sp,
-                                    color: index == state.currentIndexProject
-                                        ? whiteLight
-                                        : purpleColor)),
-                          ),
-                        ),
-                      ],
-                    ).paddingSymmetric(h: 20),
-                  ),
+            itemBuilder: (context, index) => InkWell(
+              onTap: () {
+                context.read<MainCubit>().selectProjectIndex(index);
+              },
+              child: Container(
+                clipBehavior: Clip.none,
+                width: 25,
+                height: 25,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    index == state.currentIndexProject
+                        ? Positioned(
+                            top: 10,
+                            bottom: 10,
+                            left: 0,
+                            right: 0,
+                            child: ImageFiltered(
+                              imageFilter:
+                                  ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                              child: Container(
+                                      height: 20,
+                                      width: 20,
+                                      decoration: const BoxDecoration(
+                                          gradient: LinearGradient(
+                                              colors: [purpleColor, blueColor]),
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: blueColor,
+                                                offset: Offset(5, 3),
+                                                blurRadius: 10),
+                                            BoxShadow(
+                                                color: purpleColor,
+                                                offset: Offset(-5, -3),
+                                                blurRadius: 10)
+                                          ]))
+                                  .animate(
+                                      target: index == state.currentIndexProject
+                                          ? 1
+                                          : 0)
+                                  .fadeIn(
+                                      duration: 500.ms,
+                                      curve: Curves.easeInCubic),
+                            ),
+                          )
+                        : const Positioned(
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: SizedBox.shrink()),
+                    Positioned(
+                      top: 0,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: Text((index + 1).toString(),
+                            style: GoogleFonts.nunito(
+                                fontSize: 12.sp,
+                                color: index == state.currentIndexProject
+                                    ? whiteLight
+                                    : purpleColor)),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ).paddingSymmetric(h: 15),
           ),
         );
       },
