@@ -16,14 +16,14 @@ class InfoCardMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassmorphicContainer(
-      height: 230.h,
+      height: 250,
       width: double.infinity,
-      borderRadius: 12.r,
+      borderRadius: 8.r,
       blur: 20,
-      padding: EdgeInsets.all(20.w),
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       alignment: Alignment.bottomCenter,
-      border: 1.5.w,
+      border: 1.5,
       linearGradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -44,7 +44,7 @@ class InfoCardMobile extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(8.w),
+        padding: const EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -67,7 +67,7 @@ class InfoCardMobile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 20.w, bottom: 5.w),
+                  padding: const EdgeInsets.only(left: 20, bottom: 5),
                   child: Seo.text(
                     text: ContentText.name,
                     style: TextTagStyle.h2,
@@ -83,7 +83,7 @@ class InfoCardMobile extends StatelessWidget {
                   ], duration: 2.7.seconds, curve: Curves.easeInOut),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10.w, bottom: 10.h),
+                  padding: EdgeInsets.only(left: 10, bottom: 10.h),
                   child: Seo.text(
                     text: ContentText.jobTitle,
                     style: TextTagStyle.h5,
@@ -101,9 +101,9 @@ class InfoCardMobile extends StatelessWidget {
               ],
             ),
             SizedBox(
-              width: 230.w,
+              width: 230,
               child: Padding(
-                padding: EdgeInsets.only(left: 10.w),
+                padding: const EdgeInsets.only(left: 10),
                 child: Seo.text(
                   text: ContentText.bio,
                   style: TextTagStyle.h4,
@@ -116,7 +116,7 @@ class InfoCardMobile extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 15.h),
             const Row(
               children: [
                 ContactButtonMobile(

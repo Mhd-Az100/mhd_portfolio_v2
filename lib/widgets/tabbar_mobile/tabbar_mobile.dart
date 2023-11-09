@@ -18,8 +18,9 @@ class TabBarMobile extends StatelessWidget {
       TabButtonMobile(
           tabsEnum: TabsEnum.bio,
           text: "Bio",
-          ontap: () {
-            controller.animateTo(0, curve: Curves.easeInOut, duration: 500.ms);
+          ontap: () async {
+            await controller.scrollToIndex(0,
+                duration: 500.ms, preferPosition: AutoScrollPosition.begin);
           }),
       Container(
         color: whiteLight,
@@ -29,9 +30,9 @@ class TabBarMobile extends StatelessWidget {
       TabButtonMobile(
           tabsEnum: TabsEnum.about,
           text: "About Me",
-          ontap: () {
-            controller.animateTo(900.w,
-                curve: Curves.easeInOut, duration: 500.ms);
+          ontap: () async {
+            await controller.scrollToIndex(1,
+                duration: 500.ms, preferPosition: AutoScrollPosition.begin);
           }),
       Container(
         color: whiteLight,
@@ -41,9 +42,9 @@ class TabBarMobile extends StatelessWidget {
       TabButtonMobile(
           tabsEnum: TabsEnum.services,
           text: "My Services",
-          ontap: () {
-            controller.animateTo(1800.w,
-                curve: Curves.easeInOut, duration: 500.ms);
+          ontap: () async {
+            await controller.scrollToIndex(2,
+                duration: 500.ms, preferPosition: AutoScrollPosition.begin);
           }),
       Container(
         color: whiteLight,
@@ -53,9 +54,9 @@ class TabBarMobile extends StatelessWidget {
       TabButtonMobile(
           tabsEnum: TabsEnum.myprojects,
           text: "My Projects",
-          ontap: () {
-            controller.animateTo(2700.w,
-                curve: Curves.easeInOut, duration: 500.ms);
+          ontap: () async {
+            await controller.scrollToIndex(3,
+                duration: 500.ms, preferPosition: AutoScrollPosition.begin);
           }),
       SizedBox(width: 20.w),
       ResumeButtonMobile(
