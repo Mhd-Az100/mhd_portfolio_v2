@@ -43,104 +43,107 @@ class InfoCardMobile extends StatelessWidget {
           blueColor.withOpacity(0.2),
         ],
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              ContentText.welcome,
-              style: GoogleFonts.nunito(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 11.sp,
-                  color: whiteLight),
-            )
-                .animate(
-              onPlay: (controller) => controller.repeat(reverse: true),
-            )
-                .shimmer(colors: [
-              whiteLight,
-              primaryColor.withOpacity(0.3),
-              whiteLight,
-            ], duration: 8.seconds, curve: Curves.easeInOut),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, bottom: 5),
+      child: Stack(
+        alignment: Alignment.topLeft,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(
+                ContentText.welcome,
+                style: GoogleFonts.nunito(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 11.sp,
+                    color: whiteLight),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, bottom: 5),
+                    child: Seo.text(
+                      text: ContentText.name,
+                      style: TextTagStyle.h2,
+                      child: Text(ContentText.name,
+                          style: GoogleFonts.nunito(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 21.sp,
+                              color: whiteLight)),
+                    ).animate().shimmer(colors: [
+                      whiteLight,
+                      primaryColor,
+                      blueColor,
+                    ], duration: 2.7.seconds, curve: Curves.easeInOut),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, bottom: 10.h),
+                    child: Seo.text(
+                      text: ContentText.jobTitle,
+                      style: TextTagStyle.h5,
+                      child: Text(ContentText.jobTitle,
+                          style: GoogleFonts.nunito(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 11.sp,
+                              color: whiteLight)),
+                    ).animate().shimmer(colors: [
+                      blueColor,
+                      primaryColor,
+                      whiteLight,
+                    ], duration: 2.7.seconds, curve: Curves.easeInOut),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 230,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
                   child: Seo.text(
-                    text: ContentText.name,
-                    style: TextTagStyle.h2,
-                    child: Text(ContentText.name,
-                        style: GoogleFonts.nunito(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 21.sp,
-                            color: whiteLight)),
-                  ).animate().shimmer(colors: [
-                    whiteLight,
-                    primaryColor,
-                    blueColor,
-                  ], duration: 2.7.seconds, curve: Curves.easeInOut),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10, bottom: 10.h),
-                  child: Seo.text(
-                    text: ContentText.jobTitle,
-                    style: TextTagStyle.h5,
-                    child: Text(ContentText.jobTitle,
-                        style: GoogleFonts.nunito(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 11.sp,
-                            color: whiteLight)),
-                  ).animate().shimmer(colors: [
-                    blueColor,
-                    primaryColor,
-                    whiteLight,
-                  ], duration: 2.7.seconds, curve: Curves.easeInOut),
-                ),
-              ],
-            ),
-            SizedBox(
-              width: 230,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Seo.text(
-                  text: ContentText.bio,
-                  style: TextTagStyle.h4,
-                  child: Text(
-                    textAlign: TextAlign.start,
-                    ContentText.bio,
-                    style: GoogleFonts.nunito(
-                        fontSize: 10.spMin, color: whiteLight),
+                    text: ContentText.bio,
+                    style: TextTagStyle.h4,
+                    child: Text(
+                      textAlign: TextAlign.start,
+                      ContentText.bio,
+                      style: GoogleFonts.nunito(
+                          fontSize: 10.spMin, color: whiteLight),
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 15.h),
-            const Row(
-              children: [
-                ContactButtonMobile(
-                    svgPath: "assets/svg/gmail.svg",
-                    url: "mailto:mohamadalazmeh4@gmail.com"),
-                ContactButtonMobile(
-                    svgPath: "assets/svg/github.svg",
-                    url: "https://github.com/Mhd-Az100"),
-                ContactButtonMobile(
-                    svgPath: "assets/svg/linkedIn.svg",
-                    url:
-                        "https://www.linkedin.com/in/mohammad-al-azmeh-026498217/"),
-                ContactButtonMobile(
-                    svgPath: "assets/svg/telegram.svg",
-                    url: "https://t.me/MHD_Al_Azmeh"),
-                ContactButtonMobile(
-                    svgPath: "assets/svg/whatsapp.svg",
-                    url:
-                        "https://api.whatsapp.com/send/?phone=%2B963931480357&text&type=phone_number&app_absent=0")
-              ],
-            )
-          ].animate(interval: 300.ms).slideX(
-              begin: -10, curve: Curves.easeInOutCubic, duration: 700.ms),
-        ),
+              SizedBox(height: 15.h),
+              const Row(
+                children: [
+                  ContactButtonMobile(
+                      svgPath: "assets/svg/gmail.svg",
+                      url: "mailto:mohamadalazmeh4@gmail.com"),
+                  ContactButtonMobile(
+                      svgPath: "assets/svg/github.svg",
+                      url: "https://github.com/Mhd-Az100"),
+                  ContactButtonMobile(
+                      svgPath: "assets/svg/linkedIn.svg",
+                      url:
+                          "https://www.linkedin.com/in/mohammad-al-azmeh-026498217/"),
+                  ContactButtonMobile(
+                      svgPath: "assets/svg/telegram.svg",
+                      url: "https://t.me/MHD_Al_Azmeh"),
+                  ContactButtonMobile(
+                      svgPath: "assets/svg/whatsapp.svg",
+                      url:
+                          "https://api.whatsapp.com/send/?phone=%2B963931480357&text&type=phone_number&app_absent=0")
+                ],
+              )
+            ]),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: SizedBox(
+                width: 140.w,
+                child: Image.asset(
+                  "assets/imgs/personal.png",
+                )),
+          )
+        ],
       ),
     );
   }
