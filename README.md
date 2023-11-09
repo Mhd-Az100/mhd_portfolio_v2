@@ -3,6 +3,7 @@
 Get started now by cloning :)
 
 <img src="https://i.ibb.co/MGzVtsD/portfolio.png">
+<img src="https://i.ibb.co/hZtQQN5/portfolio2.png">
 
 
 <br>
