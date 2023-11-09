@@ -11,18 +11,18 @@ import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dar
 import 'package:mhd_portfolio_v2/sections/my_services/model/services_mode.dart';
 
 // ignore: must_be_immutable
-class ServiceCard extends StatefulWidget {
-  const ServiceCard({
+class ServiceCardWeb extends StatefulWidget {
+  const ServiceCardWeb({
     Key? key,
     required this.service,
   }) : super(key: key);
   final ServiceModel service;
 
   @override
-  State<ServiceCard> createState() => _ServiceCardState();
+  State<ServiceCardWeb> createState() => _ServiceCardWebState();
 }
 
-class _ServiceCardState extends State<ServiceCard>
+class _ServiceCardWebState extends State<ServiceCardWeb>
     with TickerProviderStateMixin {
   final Duration rotationDuration = const Duration(seconds: 1);
   AnimationController? animationController;

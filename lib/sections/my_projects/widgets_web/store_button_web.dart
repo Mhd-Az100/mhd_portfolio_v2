@@ -6,8 +6,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 
-class StoreButton extends StatefulWidget {
-  const StoreButton({
+class StoreButtonWeb extends StatefulWidget {
+  const StoreButtonWeb({
     super.key,
     required this.icon,
     required this.onTap,
@@ -17,10 +17,10 @@ class StoreButton extends StatefulWidget {
   final Function()? onTap;
   final String icon;
   @override
-  State<StoreButton> createState() => _StoreButtonState();
+  State<StoreButtonWeb> createState() => _StoreButtonWebState();
 }
 
-class _StoreButtonState extends State<StoreButton> {
+class _StoreButtonWebState extends State<StoreButtonWeb> {
   bool _isHover = false;
   @override
   Widget build(BuildContext context) {

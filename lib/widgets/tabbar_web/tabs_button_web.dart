@@ -7,8 +7,8 @@ import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
 import 'package:mhd_portfolio_v2/resources/enums.dart';
 
-class TabButton extends StatelessWidget {
-  const TabButton({
+class TabButtonWeb extends StatelessWidget {
+  const TabButtonWeb({
     super.key,
     required this.tabsEnum,
     required this.text,

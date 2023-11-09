@@ -12,36 +12,15 @@ class MainCubit extends Cubit<MainState> {
   MainCubit() : super(MainState.initState());
   AutoScrollController rootScrollTag = AutoScrollController();
 
-  final ItemScrollController projectIndexScrollController =
-      ItemScrollController();
-  final ItemPositionsListener projectIndexPositionsListener =
-      ItemPositionsListener.create();
+  ItemScrollController? projectIndexScrollController;
+  ItemPositionsListener? projectIndexPositionsListener;
+
   Future scrollToIndex(int index) async {
-    await projectIndexScrollController.scrollTo(
+    await projectIndexScrollController?.scrollTo(
         alignment: 0.4,
         curve: Curves.easeIn,
         index: index,
         duration: const Duration(milliseconds: 500));
-  }
-
-  hoverContact(ContactEnum contact) {
-    emit(state.copyWith(hoverContact: contact));
-  }
-
-  hoverTabs(TabsEnum tab) {
-    emit(state.copyWith(hoverTabs: tab));
-  }
-
-  hoverResume(bool isHover) {
-    emit(state.copyWith(hoverResume: isHover));
-  }
-
-  hoverService(bool isHover) {
-    emit(state.copyWith(hoverService: isHover));
-  }
-
-  isScrollingForward(bool isScrollDown) {
-    emit(state.copyWith(scrolldown: isScrollDown));
   }
 
   selectProjectIndex(int index) {
@@ -61,6 +40,29 @@ class MainCubit extends Cubit<MainState> {
       emit(state.copyWith(currentIndexProject: state.currentIndexProject - 1));
       scrollToIndex(state.currentIndexProject);
     }
+  }
+
+  //====mobile=====
+
+//=========
+  hoverContact(ContactEnum contact) {
+    emit(state.copyWith(hoverContact: contact));
+  }
+
+  hoverTabs(TabsEnum tab) {
+    emit(state.copyWith(hoverTabs: tab));
+  }
+
+  hoverResume(bool isHover) {
+    emit(state.copyWith(hoverResume: isHover));
+  }
+
+  hoverService(bool isHover) {
+    emit(state.copyWith(hoverService: isHover));
+  }
+
+  isScrollingDown(bool isScrollDown) {
+    emit(state.copyWith(scrolldown: isScrollDown));
   }
 
   Future featchAssets() async {}

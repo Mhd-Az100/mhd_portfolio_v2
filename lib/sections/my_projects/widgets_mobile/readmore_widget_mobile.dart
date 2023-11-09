@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
 
-class ReadMoreText extends StatelessWidget {
+class ReadMoreTextMobile extends StatelessWidget {
   final String text;
   final TextStyle textStyle;
 
-  const ReadMoreText({
+  const ReadMoreTextMobile({
     super.key,
     required this.text,
     required this.textStyle,
@@ -19,7 +20,7 @@ class ReadMoreText extends StatelessWidget {
         return AlertDialog(
           backgroundColor: const Color.fromARGB(255, 25, 28, 34),
           content: SingleChildScrollView(
-            child: Text(text, style: textStyle).paddingAll(25.w),
+            child: Text(text, style: textStyle).paddingAll(10.w),
           ),
           actions: <Widget>[
             TextButton(
@@ -29,7 +30,7 @@ class ReadMoreText extends StatelessWidget {
               child: const Text('Close'),
             ),
           ],
-        ).paddingSymmetric(h: 200.w);
+        ).paddingSymmetric(h: 20.w);
       },
     );
   }
@@ -49,12 +50,10 @@ class ReadMoreText extends StatelessWidget {
           onTap: () {
             _showFullTextDialog(context);
           },
-          child: const Text(
+          child: Text(
             'Read More...',
-            style: TextStyle(
-              color: Colors.blue, // You can customize the button style
-              fontWeight: FontWeight.bold,
-            ),
+            style: textStyle.copyWith(
+                fontWeight: FontWeight.bold, color: blueColor),
           ),
         ),
       ],

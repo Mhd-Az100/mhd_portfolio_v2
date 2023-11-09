@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/resources/projects_list.dart';
 
-class InProgressCard extends StatelessWidget {
-  const InProgressCard({
+class InProgressCardWeb extends StatelessWidget {
+  const InProgressCardWeb({
     super.key,
     required this.index,
   });

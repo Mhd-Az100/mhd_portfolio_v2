@@ -11,10 +11,25 @@ import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
 import 'package:mhd_portfolio_v2/resources/projects_list.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class ListIndexPojectWidget extends StatelessWidget {
-  const ListIndexPojectWidget({
+class ListIndexPojectWidgetWeb extends StatefulWidget {
+  const ListIndexPojectWidgetWeb({
     super.key,
   });
+
+  @override
+  State<ListIndexPojectWidgetWeb> createState() =>
+      _ListIndexPojectWidgetWebState();
+}
+
+class _ListIndexPojectWidgetWebState extends State<ListIndexPojectWidgetWeb> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<MainCubit>().projectIndexScrollController =
+        ItemScrollController();
+    context.read<MainCubit>().projectIndexPositionsListener =
+        ItemPositionsListener.create();
+  }
 
   @override
   Widget build(BuildContext context) {

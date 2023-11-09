@@ -6,8 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
 
-class TitleOfSection extends StatelessWidget {
-  const TitleOfSection({
+class TitleOfSectionWeb extends StatelessWidget {
+  const TitleOfSectionWeb({
     Key? key,
     required this.text,
   }) : super(key: key);

@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
-import 'package:mhd_portfolio_v2/root.dart';
+import 'package:mhd_portfolio_v2/root_mobile.dart';
+import 'package:mhd_portfolio_v2/root_web.dart';
+import 'package:mhd_portfolio_v2/utils/responsive.dart';
 import 'package:seo/seo.dart';
 
 void main() {
@@ -22,7 +24,10 @@ class MainApp extends StatelessWidget {
       child: BlocProvider(
         create: (context) => MainCubit(),
         child: ScreenUtilInit(
-          designSize: const Size(1440, 900),
+          designSize:
+              Responsive.isDesktop(context) || Responsive.isTablet(context)
+                  ? const Size(1440, 900)
+                  : const Size(393, 852),
           minTextAdapt: true,
           splitScreenMode: true,
           // Use builder only if you need to use library outside ScreenUtilInit context
@@ -30,7 +35,7 @@ class MainApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Mohammad Al Azmeh | Flutter Developer',
-             
+
               // You can use the library anywhere in the app even in theme
               theme: ThemeData(
                 primarySwatch: Colors.blue,
@@ -40,7 +45,9 @@ class MainApp extends StatelessWidget {
               home: child,
             );
           },
-          child: RootScreen(),
+          child: Responsive.isDesktop(context) || Responsive.isTablet(context)
+              ? const RootScreenWeb()
+              : const RootScreenMobile(),
         ),
       ),
     );

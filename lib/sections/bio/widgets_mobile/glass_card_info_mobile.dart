@@ -5,30 +5,31 @@ import 'package:glassmorphism/glassmorphism.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/resources/content_texts.dart';
-import 'package:mhd_portfolio_v2/sections/bio/widgets/contacts_buttons_widget.dart';
+import 'package:mhd_portfolio_v2/sections/bio/widgets_mobile/contacts_buttons_mobile.dart';
 import 'package:seo/seo.dart';
 
-class InfoCard extends StatelessWidget {
-  const InfoCard({
+class InfoCardMobile extends StatelessWidget {
+  const InfoCardMobile({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return GlassmorphicContainer(
-      height: 370.w,
-      width: 680.w,
-      borderRadius: 20.r,
+      height: 230.h,
+      width: double.infinity,
+      borderRadius: 12.r,
       blur: 20,
       padding: EdgeInsets.all(20.w),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       alignment: Alignment.bottomCenter,
       border: 1.5.w,
       linearGradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color.fromARGB(70, 68, 68, 70),
-            Color.fromARGB(156, 65, 91, 131),
+            Color.fromARGB(30, 169, 169, 195),
+            Color.fromARGB(70, 65, 91, 131),
           ],
           stops: [
             0.1,
@@ -43,7 +44,7 @@ class InfoCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(35.w),
+        padding: EdgeInsets.all(8.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -51,7 +52,7 @@ class InfoCard extends StatelessWidget {
               ContentText.welcome,
               style: GoogleFonts.nunito(
                   fontWeight: FontWeight.w400,
-                  fontSize: 25.sp,
+                  fontSize: 11.sp,
                   color: whiteLight),
             )
                 .animate(
@@ -73,7 +74,7 @@ class InfoCard extends StatelessWidget {
                     child: Text(ContentText.name,
                         style: GoogleFonts.nunito(
                             fontWeight: FontWeight.w600,
-                            fontSize: 45.sp,
+                            fontSize: 21.sp,
                             color: whiteLight)),
                   ).animate().shimmer(colors: [
                     whiteLight,
@@ -82,14 +83,14 @@ class InfoCard extends StatelessWidget {
                   ], duration: 2.7.seconds, curve: Curves.easeInOut),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.w, bottom: 20.w),
+                  padding: EdgeInsets.only(left: 10.w, bottom: 10.h),
                   child: Seo.text(
                     text: ContentText.jobTitle,
                     style: TextTagStyle.h5,
                     child: Text(ContentText.jobTitle,
                         style: GoogleFonts.nunito(
                             fontWeight: FontWeight.w500,
-                            fontSize: 22.sp,
+                            fontSize: 11.sp,
                             color: whiteLight)),
                   ).animate().shimmer(colors: [
                     blueColor,
@@ -100,9 +101,9 @@ class InfoCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              width: 500.w,
+              width: 230.w,
               child: Padding(
-                padding: EdgeInsets.only(left: 20.w),
+                padding: EdgeInsets.only(left: 10.w),
                 child: Seo.text(
                   text: ContentText.bio,
                   style: TextTagStyle.h4,
@@ -110,28 +111,28 @@ class InfoCard extends StatelessWidget {
                     textAlign: TextAlign.start,
                     ContentText.bio,
                     style: GoogleFonts.nunito(
-                        fontSize: 18.spMin, color: whiteLight),
+                        fontSize: 10.spMin, color: whiteLight),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 20.w),
+            SizedBox(height: 10.h),
             const Row(
               children: [
-                ContactButton(
+                ContactButtonMobile(
                     svgPath: "assets/svg/gmail.svg",
                     url: "mailto:mohamadalazmeh4@gmail.com"),
-                ContactButton(
+                ContactButtonMobile(
                     svgPath: "assets/svg/github.svg",
                     url: "https://github.com/Mhd-Az100"),
-                ContactButton(
+                ContactButtonMobile(
                     svgPath: "assets/svg/linkedIn.svg",
                     url:
                         "https://www.linkedin.com/in/mohammad-al-azmeh-026498217/"),
-                ContactButton(
+                ContactButtonMobile(
                     svgPath: "assets/svg/telegram.svg",
                     url: "https://t.me/MHD_Al_Azmeh"),
-                ContactButton(
+                ContactButtonMobile(
                     svgPath: "assets/svg/whatsapp.svg",
                     url:
                         "https://api.whatsapp.com/send/?phone=%2B963931480357&text&type=phone_number&app_absent=0")

@@ -4,8 +4,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
 import 'package:mhd_portfolio_v2/resources/services_list.dart';
-import 'package:mhd_portfolio_v2/sections/my_services/widgets/service_card_widget.dart';
-import 'package:mhd_portfolio_v2/widgets/title_of_section.dart';
+import 'package:mhd_portfolio_v2/sections/my_services/widgets/service_card_web.dart';
+import 'package:mhd_portfolio_v2/widgets/title_of_section_web.dart';
 
 class MyServicesWeb extends StatelessWidget {
   const MyServicesWeb({super.key});
@@ -15,12 +15,12 @@ class MyServicesWeb extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 30.w),
-        const TitleOfSection(text: "What I Can Do ?"),
+        const TitleOfSectionWeb(text: "What I Can Do ?"),
         SizedBox(height: 70.w),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ServiceCard(
+            ServiceCardWeb(
               service: MyServicesList.myServicesList[0],
             )
                 .animate()
@@ -28,7 +28,7 @@ class MyServicesWeb extends StatelessWidget {
                 .slideX(
                     begin: -2, end: 0, duration: 700.ms, curve: Curves.easeIn),
             SizedBox(width: 50.w),
-            ServiceCard(
+            ServiceCardWeb(
               service: MyServicesList.myServicesList[1],
             )
                 .animate()
@@ -41,7 +41,7 @@ class MyServicesWeb extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ServiceCard(
+            ServiceCardWeb(
               service: MyServicesList.myServicesList[2],
             )
                 .animate(delay: 200.ms)
@@ -49,7 +49,7 @@ class MyServicesWeb extends StatelessWidget {
                 .slideX(
                     begin: -2, end: 0, duration: 700.ms, curve: Curves.easeIn),
             SizedBox(width: 50.w),
-            ServiceCard(
+            ServiceCardWeb(
               service: MyServicesList.myServicesList[3],
             )
                 .animate(delay: 200.ms)

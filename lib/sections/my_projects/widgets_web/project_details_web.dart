@@ -7,14 +7,14 @@ import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
 import 'package:mhd_portfolio_v2/resources/projects_list.dart';
-import 'package:mhd_portfolio_v2/sections/my_projects/widgets/inprogress_card.dart';
-import 'package:mhd_portfolio_v2/sections/my_projects/widgets/readmore_widget.dart';
-import 'package:mhd_portfolio_v2/sections/my_projects/widgets/store_button.dart';
-import 'package:mhd_portfolio_v2/sections/my_projects/widgets/technology_card.dart';
+import 'package:mhd_portfolio_v2/sections/my_projects/widgets_web/inprogress_card_web.dart';
+import 'package:mhd_portfolio_v2/sections/my_projects/widgets_web/readmore_widget_web.dart';
+import 'package:mhd_portfolio_v2/sections/my_projects/widgets_web/store_button_web.dart';
+import 'package:mhd_portfolio_v2/sections/my_projects/widgets_web/technology_card_web.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectDetailsWidget extends StatelessWidget {
-  const ProjectDetailsWidget({
+class ProjectDetailsWidgetWeb extends StatelessWidget {
+  const ProjectDetailsWidgetWeb({
     required this.index,
     super.key,
   });
@@ -64,13 +64,13 @@ class ProjectDetailsWidget extends StatelessWidget {
               SizedBox(height: 10.w),
               Wrap(
                 children: MyProjectsList.myProjects[index].technology
-                        ?.map((e) => TechnologyCard(txt: e)
+                        ?.map((e) => TechnologyCardWeb(txt: e)
                             .paddingSymmetric(h: 5.w, v: 5.w))
                         .toList() ??
                     [],
               ),
               SizedBox(height: 30.w),
-              ReadMoreText(
+              ReadMoreTextWeb(
                 text: MyProjectsList.myProjects[index].desciption ?? '',
                 textStyle: GoogleFonts.nunito(
                   fontSize: 16.sp,
@@ -88,12 +88,12 @@ class ProjectDetailsWidget extends StatelessWidget {
               (MyProjectsList.myProjects[index].appStoreLink?.isEmpty ??
                   true) &&
               (MyProjectsList.myProjects[index].driveLink?.isEmpty ?? true),
-          child: InProgressCard(index: index),
+          child: InProgressCardWeb(index: index),
         ),
         Visibility(
           visible:
               (MyProjectsList.myProjects[index].driveLink?.isNotEmpty ?? false),
-          child: StoreButton(
+          child: StoreButtonWeb(
             icon: "assets/svg/drive.svg",
             txt: "Drive Link",
             onTap: () async {
@@ -108,7 +108,7 @@ class ProjectDetailsWidget extends StatelessWidget {
               visible:
                   (MyProjectsList.myProjects[index].googlplayLink?.isNotEmpty ??
                       false),
-              child: StoreButton(
+              child: StoreButtonWeb(
                 icon: "assets/svg/play.svg",
                 txt: "Google Play",
                 onTap: () async {
@@ -122,7 +122,7 @@ class ProjectDetailsWidget extends StatelessWidget {
               visible:
                   (MyProjectsList.myProjects[index].appStoreLink?.isNotEmpty ??
                       false),
-              child: StoreButton(
+              child: StoreButtonWeb(
                 icon: "assets/svg/apple.svg",
                 txt: "Play Store",
                 onTap: () async {

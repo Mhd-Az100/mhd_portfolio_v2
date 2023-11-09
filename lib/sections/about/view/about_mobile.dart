@@ -7,19 +7,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mhd_portfolio_v2/constants/colors.dart';
 import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dart';
 import 'package:mhd_portfolio_v2/resources/content_texts.dart';
-import 'package:mhd_portfolio_v2/widgets/title_of_section_web.dart';
+import 'package:mhd_portfolio_v2/widgets/title_of_section_mobile.dart';
 
-class AboutWeb extends StatelessWidget {
-  const AboutWeb({super.key});
+class AboutMobile extends StatelessWidget {
+  const AboutMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 30.w),
-        const TitleOfSectionWeb(text: "About Me"),
-        SizedBox(height: 70.w),
+        const TitleOfSectionMobile(text: "About Me"),
+        SizedBox(height: 25.h),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,32 +28,32 @@ class AboutWeb extends StatelessWidget {
               style: GoogleFonts.nunito(
                   height: 2,
                   fontWeight: FontWeight.w400,
-                  fontSize: 20.sp,
+                  fontSize: 9.sp,
                   color: whiteLight),
             ),
-            SizedBox(height: 20.w),
+            SizedBox(height: 10.h),
             GlowText(
               glowColor: Colors.white,
               blurRadius: 15,
               ContentText.personality,
               style: GoogleFonts.nunito(
                   fontWeight: FontWeight.bold,
-                  fontSize: 26.sp,
+                  fontSize: 12.sp,
                   color: whiteLight),
             ),
-            SizedBox(height: 20.w),
+            SizedBox(height: 10.h),
             Text(
               textAlign: TextAlign.justify,
               ContentText.aboutPersonality,
               style: GoogleFonts.nunito(
                   height: 2,
                   fontWeight: FontWeight.w400,
-                  fontSize: 20.sp,
+                  fontSize: 9.sp,
                   color: whiteLight),
             )
           ],
         )
-            .paddingSymmetric(h: 130.w)
+            .paddingSymmetric(h: 20.w)
             .animate()
             .fadeIn(duration: 500.ms, curve: Curves.easeIn),
       ],

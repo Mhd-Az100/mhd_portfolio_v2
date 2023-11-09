@@ -16,7 +16,7 @@ Get started now by cloning :)
 </div>
 
 ## 🧑‍💻 MHD_Portfolio
-Is a portfolio for developers available web, and mobile cooming soon. Includes the following sections:
+Is a portfolio for developers available web, Tablet and mobile . Includes the following sections:
 - Bio + Contact
 - About
 - Services

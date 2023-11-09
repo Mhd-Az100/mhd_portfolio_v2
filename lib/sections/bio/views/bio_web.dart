@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
-import 'package:mhd_portfolio_v2/sections/bio/widgets/glass_card_info_widget.dart';
-import 'package:mhd_portfolio_v2/sections/bio/widgets/my_pic_widget.dart';
+import 'package:mhd_portfolio_v2/sections/bio/widgets_web/glass_card_info_web.dart';
+import 'package:mhd_portfolio_v2/sections/bio/widgets_web/my_pic_widget.dart';
 
 class BioWeb extends StatelessWidget {
   const BioWeb({Key? key}) : super(key: key);
@@ -30,12 +28,6 @@ class BioWeb extends StatelessWidget {
             ),
           )
               .animate(
-                target: context
-                        .read<MainCubit>()
-                        .rootScrollTag
-                        .isIndexStateInLayoutRange(0)
-                    ? 1
-                    : 0,
                 onPlay: (controller) => controller.repeat(reverse: true),
               )
               .move(
@@ -47,14 +39,7 @@ class BioWeb extends StatelessWidget {
           Positioned(
             right: 40.w,
             child: const MyPictureWidget()
-                .animate(
-                  target: context
-                          .read<MainCubit>()
-                          .rootScrollTag
-                          .isIndexStateInLayoutRange(0)
-                      ? 1
-                      : 0,
-                )
+                .animate()
                 .slideX(
                   begin: 4,
                   curve: Curves.fastLinearToSlowEaseIn,
@@ -68,7 +53,7 @@ class BioWeb extends StatelessWidget {
           Positioned(
             left: MediaQuery.of(context).size.width * 0.05.w,
             top: -75.w,
-            child: const InfoCard().animate().slideX(
+            child: const InfoCardWeb().animate().slideX(
                   begin: -4,
                   curve: Curves.fastLinearToSlowEaseIn,
                   duration: 1.2.seconds,

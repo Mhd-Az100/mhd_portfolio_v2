@@ -6,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/cubit/main_cubit.dart';
 import 'package:mhd_portfolio_v2/resources/projects_list.dart';
 
-class ProjectMockupWidget extends StatelessWidget {
-  const ProjectMockupWidget({
+class ProjectMockupWidgetWeb extends StatelessWidget {
+  const ProjectMockupWidgetWeb({
     required this.index,
     super.key,
   });
