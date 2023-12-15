@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class RandomWidgetMove extends StatefulWidget {
   RandomWidgetMove({
-    Key? key,
+    super.key,
     this.top,
     this.left,
     this.right,
     this.bottom,
     required this.child,
-  }) : super(key: key);
+  });
   double? top;
   double? left;
   double? right;

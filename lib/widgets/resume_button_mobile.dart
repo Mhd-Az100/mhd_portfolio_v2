@@ -11,10 +11,10 @@ class ResumeButtonMobile extends StatefulWidget {
   final String text;
 
   const ResumeButtonMobile({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   _ResumeButtonMobileState createState() => _ResumeButtonMobileState();

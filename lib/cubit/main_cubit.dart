@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mhd_portfolio_v2/resources/enums.dart';
 import 'package:mhd_portfolio_v2/resources/projects_list.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -40,6 +40,10 @@ class MainCubit extends Cubit<MainState> {
       emit(state.copyWith(currentIndexProject: state.currentIndexProject - 1));
       scrollToIndex(state.currentIndexProject);
     }
+  }
+
+  isScrollingForward(bool isScrollDown) {
+    emit(state.copyWith(scrolldown: isScrollDown));
   }
 
   //====mobile=====

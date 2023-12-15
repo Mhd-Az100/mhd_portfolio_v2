@@ -10,9 +10,9 @@ import 'package:mhd_portfolio_v2/sections/my_services/model/services_mode.dart';
 // ignore: must_be_immutable
 class ServiceCardMobile extends StatefulWidget {
   const ServiceCardMobile({
-    Key? key,
+    super.key,
     required this.service,
-  }) : super(key: key);
+  });
   final ServiceModel service;
 
   @override

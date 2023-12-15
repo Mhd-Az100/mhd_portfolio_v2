@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,12 +11,10 @@ import 'package:mhd_portfolio_v2/sections/about/view/about_web.dart';
 import 'package:mhd_portfolio_v2/sections/bio/views/bio_web.dart';
 import 'package:mhd_portfolio_v2/sections/my_projects/view/my_porjects_web.dart';
 import 'package:mhd_portfolio_v2/sections/my_services/view/my_services_web.dart';
-import 'package:mhd_portfolio_v2/utils/responsive.dart';
 import 'package:mhd_portfolio_v2/widgets/footer_widget_web.dart';
 import 'package:mhd_portfolio_v2/widgets/random_move_widget.dart';
 import 'package:mhd_portfolio_v2/widgets/tabbar_web/tabbar_web.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 class RootScreenWeb extends StatefulWidget {
   const RootScreenWeb({super.key});
@@ -34,47 +33,42 @@ class _RootScreenWebState extends State<RootScreenWeb> {
   @override
   void initState() {
     super.initState();
-    mainCubit.rootScrollTag.addListener(() {
-      double currentOffset = mainCubit.rootScrollTag.offset;
-      if (Responsive.isDesktop(context) || Responsive.isTablet(context)) {
-        // Scrolling down
-        if (currentOffset > previousOffset) {
-          _autoScrollDown(currentOffset);
-        }
-
-        // Scrolling up
-        if (currentOffset < previousOffset) {
-          _autoScrollUp(currentOffset);
-        }
-
-        previousOffset = currentOffset;
-      }
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebSmoothScroll(
-        controller: mainCubit.rootScrollTag,
-        scrollOffset: 60, // additional offset to users scroll input
-        animationDuration:
-            500, // duration of animation of scroll in milliseconds
-        curve: Curves.easeIn,
-
+      body: NotificationListener<ScrollNotification>(
+        onNotification: (notification) {
+          if (mainCubit.rootScrollTag.position.userScrollDirection ==
+              ScrollDirection.reverse) {
+            context.read<MainCubit>().isScrollingForward(true);
+          } else if (mainCubit.rootScrollTag.position.userScrollDirection ==
+              ScrollDirection.forward) {
+            context.read<MainCubit>().isScrollingForward(false);
+          }
+          return true;
+        },
         child: Container(
           decoration: const BoxDecoration(color: primaryColor),
           child: Column(
             children: [
-              TabBarWeb(
-                controller: mainCubit.rootScrollTag,
-              ).paddingSymmetric(h: 50.w, v: 10.w),
+              BlocBuilder<MainCubit, MainState>(
+                builder: (context, state) {
+                  return AnimatedSwitcher(
+                    // opacity: state.scrollDown ? 0.0 : 1.0,
+                    duration: const Duration(milliseconds: 500),
+                    child: state.scrollDown
+                        ? const SizedBox.shrink()
+                        : TabBarWeb(
+                            controller: mainCubit.rootScrollTag,
+                          ).paddingSymmetric(h: 50.w, v: 10.w),
+                  );
+                },
+              ),
               Expanded(
                 child: ListView(
                   controller: mainCubit.rootScrollTag,
-                  physics: Responsive.isTablet(context)
-                      ? null
-                      : const NeverScrollableScrollPhysics(),
                   children: [
                     AutoScrollTag(
                       key: const ValueKey(0),
@@ -232,70 +226,5 @@ class _RootScreenWebState extends State<RootScreenWeb> {
         ),
       ),
     );
-  }
-
-  _autoScrollDown(double currentOffset) {
-    if (currentOffset <= 10) {
-      scrolledTo800 = false;
-    }
-    if (currentOffset >= 100.w && currentOffset < 800.w && !scrolledTo800) {
-      mainCubit.rootScrollTag
-          .animateTo(800.w, curve: Curves.easeInOut, duration: 500.ms);
-      scrolledTo800 = true;
-      scrolledTo1600 = false;
-      scrolledTo2400 = false;
-    }
-    //
-    else if (currentOffset > 850.w &&
-        currentOffset < 1600.w &&
-        !scrolledTo1600) {
-      mainCubit.rootScrollTag
-          .animateTo(1600.w, curve: Curves.easeInOut, duration: 500.ms);
-      scrolledTo800 = false;
-      scrolledTo1600 = true;
-      scrolledTo2400 = false;
-    }
-    //
-    else if (currentOffset > 1650.w && !scrolledTo2400) {
-      mainCubit.rootScrollTag
-          .animateTo(2400.w, curve: Curves.easeInOut, duration: 500.ms);
-      scrolledTo800 = false;
-      scrolledTo1600 = false;
-      scrolledTo2400 = true;
-    }
-  }
-
-  _autoScrollUp(double currentOffset) {
-    if (currentOffset >= 2300) {
-      scrolledTo2400 = false;
-    }
-
-    if (currentOffset <= 700.w && !scrolledTo800) {
-      mainCubit.rootScrollTag
-          .animateTo(0.w, curve: Curves.easeInOut, duration: 500.ms);
-      scrolledTo800 = true;
-      scrolledTo1600 = false;
-      scrolledTo2400 = false;
-    }
-    //
-    else if (currentOffset > 850.w &&
-        currentOffset <= 1500.w &&
-        !scrolledTo1600) {
-      mainCubit.rootScrollTag
-          .animateTo(800.w, curve: Curves.easeInOut, duration: 500.ms);
-      scrolledTo800 = false;
-      scrolledTo1600 = true;
-      scrolledTo2400 = false;
-    }
-    //
-    else if (currentOffset > 1650.w &&
-        currentOffset <= 2300.w &&
-        !scrolledTo2400) {
-      mainCubit.rootScrollTag
-          .animateTo(1600.w, curve: Curves.easeInOut, duration: 500.ms);
-      scrolledTo800 = false;
-      scrolledTo1600 = false;
-      scrolledTo2400 = true;
-    }
   }
 }

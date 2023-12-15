@@ -8,9 +8,9 @@ import 'package:mhd_portfolio_v2/extensions/WidgetExtension/extension_widget.dar
 
 class TitleOfSectionWeb extends StatelessWidget {
   const TitleOfSectionWeb({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
   final String text;
   @override
   Widget build(BuildContext context) {

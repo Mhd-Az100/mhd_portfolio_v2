@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mhd_portfolio_v2/sections/bio/widgets_mobile/glass_card_info_mobile.dart';
 
 class BioMobile extends StatelessWidget {
-  const BioMobile({Key? key}) : super(key: key);
+  const BioMobile({super.key});
 
   @override
   Widget build(BuildContext context) {

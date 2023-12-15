@@ -25,7 +25,7 @@ class MyProjectsWeb extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Expanded(
+                const Expanded(
                   child: ListIndexPojectWidgetWeb(),
                 ),
                 Expanded(

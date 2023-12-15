@@ -8,10 +8,10 @@ class ResumeButtonWeb extends StatefulWidget {
   final String text;
 
   const ResumeButtonWeb({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   _ResumeButtonWebState createState() => _ResumeButtonWebState();

@@ -5,7 +5,7 @@ import 'package:mhd_portfolio_v2/sections/bio/widgets_web/glass_card_info_web.da
 import 'package:mhd_portfolio_v2/sections/bio/widgets_web/my_pic_widget.dart';
 
 class BioWeb extends StatelessWidget {
-  const BioWeb({Key? key}) : super(key: key);
+  const BioWeb({super.key});
 
   @override
   Widget build(BuildContext context) {
