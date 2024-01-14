@@ -129,7 +129,7 @@ class InfoCardMobile extends StatelessWidget {
                   ContactButtonMobile(
                       svgPath: "assets/svg/whatsapp.svg",
                       url:
-                          "https://api.whatsapp.com/send/?phone=%2B963931480357&text&type=phone_number&app_absent=0")
+                          "https://api.whatsapp.com/send/?phone=%2B971505028913&text&type=phone_number&app_absent=0")
                 ],
               )
             ]),
